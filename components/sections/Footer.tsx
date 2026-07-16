@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
         
         {/* Branding & Socials */}
-        <div className="lg:col-span-4 space-y-6 text-left">
+        <div className="lg:col-span-5 space-y-6 text-left">
           <a
             href="#"
             onClick={(e) => handleLinkClick(e, "#")}
@@ -81,7 +81,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Quick Links */}
-        <div className="lg:col-span-2 space-y-4 text-left">
+        <div className="lg:col-span-3 space-y-4 text-left">
           <h4 className="font-display font-bold text-sm uppercase tracking-widest text-slate-300">Quick Links</h4>
           <ul className="space-y-2.5 text-sm text-slate-400">
             <li>
@@ -95,13 +95,8 @@ export const Footer: React.FC = () => {
               </a>
             </li>
             <li>
-              <a href="#experience" onClick={(e) => handleLinkClick(e, "#experience")} className="hover:text-white transition-colors">
-                Experience
-              </a>
-            </li>
-            <li>
-              <a href="#hospitals" onClick={(e) => handleLinkClick(e, "#hospitals")} className="hover:text-white transition-colors">
-                Hospitals
+              <a href="#blog" onClick={(e) => handleLinkClick(e, "#blog")} className="hover:text-white transition-colors">
+                Video Guides & Blog
               </a>
             </li>
             <li>
@@ -117,21 +112,8 @@ export const Footer: React.FC = () => {
           </ul>
         </div>
 
-        {/* Clinics & Hospitals */}
-        <div className="lg:col-span-3 space-y-4 text-left">
-          <h4 className="font-display font-bold text-sm uppercase tracking-widest text-slate-300">Hospitals</h4>
-          <ul className="space-y-3.5 text-sm text-slate-400">
-            {doctorData.hospitals.map((hosp) => (
-              <li key={hosp.id} className="space-y-0.5">
-                <p className="font-semibold text-white leading-snug">{hosp.name}</p>
-                <p className="text-xs text-slate-400">{hosp.location}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-
         {/* Contact & Hours */}
-        <div className="lg:col-span-3 space-y-4 text-left">
+        <div className="lg:col-span-4 space-y-4 text-left">
           <h4 className="font-display font-bold text-sm uppercase tracking-widest text-slate-300">Contact & Hours</h4>
           <ul className="space-y-3 text-sm text-slate-400">
             <li className="flex items-center gap-2">

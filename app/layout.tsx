@@ -64,10 +64,10 @@ export default function RootLayout({
     ],
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "KIMS Cuddles, Unit of KIMS Group",
-      "addressLocality": "Visakhapatnam",
-      "addressRegion": "Andhra Pradesh",
-      "postalCode": "530002",
+      "streetAddress": "Aster Women & Children Hospital, Whitefield",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "Karnataka",
+      "postalCode": "560066",
       "addressCountry": "IN"
     },
     "openingHoursSpecification": [

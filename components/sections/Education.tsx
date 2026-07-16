@@ -14,7 +14,7 @@ export const Education: React.FC = () => {
   const [activeTab, setActiveTab] = useState<TabId>("education");
 
   const tabs = [
-    { id: "education" as const, label: "Degrees & Fellowships", icon: GraduationCap },
+    { id: "education" as const, label: "Clinical Fellowships", icon: GraduationCap },
     { id: "certifications" as const, label: "Board & Memberships", icon: Landmark },
     { id: "awards" as const, label: "Awards & Honors", icon: Award },
   ];
@@ -24,7 +24,7 @@ export const Education: React.FC = () => {
       <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
         <SectionTitle
           title="Academic Credentials & Honors"
-          subtitle="Distinguished education, clinical training fellowships, and leadership in international pediatric surgical organizations."
+          subtitle="Distinguished clinical training fellowships, certifications, and leadership in international pediatric surgical organizations."
           badge="Credentials & Awards"
         />
 
@@ -63,27 +63,9 @@ export const Education: React.FC = () => {
               transition={{ duration: 0.25, ease: "easeInOut" }}
             >
               {activeTab === "education" && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                  {/* Left: Degrees */}
-                  <Card className="p-8 bg-white border-slate-200/50 shadow-soft">
-                    <h3 className="font-display font-bold text-xl text-brand-navy mb-6 flex items-center gap-2">
-                      <GraduationCap className="h-5 w-5 text-brand-blue" />
-                      <span>Formal Degrees</span>
-                    </h3>
-                    <div className="space-y-6">
-                      {doctorData.education.map((item, idx) => (
-                        <div key={idx} className="border-l-2 border-slate-100 pl-4 space-y-1 relative">
-                          <div className="absolute top-1.5 -left-[5px] h-2 w-2 rounded-full bg-brand-blue" />
-                          <span className="text-xs font-bold text-brand-green">{item.year}</span>
-                          <h4 className="font-display font-bold text-base text-brand-navy">{item.degree}</h4>
-                          <p className="text-xs text-slate-500">{item.institution}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </Card>
-
+                <div className="flex justify-center w-full">
                   {/* Right: Fellowships */}
-                  <Card className="p-8 bg-white border-slate-200/50 shadow-soft">
+                  <Card className="p-8 w-full max-w-2xl bg-white border-slate-200/50 shadow-soft text-left">
                     <h3 className="font-display font-bold text-xl text-brand-navy mb-6 flex items-center gap-2">
                       <Medal className="h-5 w-5 text-brand-green" />
                       <span>Clinical Fellowships</span>

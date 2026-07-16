@@ -78,6 +78,15 @@ export interface BlogArticle {
   imagePlaceholder: string;
 }
 
+export interface VideoGuide {
+  id: string;
+  title: string;
+  duration: string;
+  thumbnail: string;
+  youtubeId: string;
+  description: string;
+}
+
 export interface DoctorProfile {
   name: string;
   title: string;
@@ -113,10 +122,11 @@ export interface DoctorProfile {
   testimonials: Testimonial[];
   faqs: FAQItem[];
   blogArticles: BlogArticle[];
+  videos: VideoGuide[];
 }
 
 export const doctorData: DoctorProfile = {
-  name: "Vijayganesh Sankar",
+  name: "Vijay Ganesh Sankar",
   title: "Senior Consultant Paediatric Surgeon",
   tagline: "15+ years of specialized pediatric urology, laparoscopy, and neonatal reconstructive surgery.",
   qualificationsSummary: "MBBS, MS, MCh, FICRS, FEBPS, FMAS, FIAGES",
@@ -124,7 +134,7 @@ export const doctorData: DoctorProfile = {
   patientsTreated: "10,000+",
   surgeriesPerformed: "6,000+",
   hospitalsServed: "6+",
-  aboutText: "Dr. Vijayganesh Sankar is a DHA Eligible, European Board Certified Paediatric Surgeon with 15 years of Paediatric surgical experience post-M.Ch. Having received advanced training in Paediatric Robotic Surgery, he specializes in laparoscopic surgical procedures with a strong focus on advanced keyhole techniques, neonatal surgical emergencies, and pediatric urology. Known for excelling in high-stress environments, he is dedicated to putting young patients at ease and diagnosing even the most complex congenital and acquired disorders.",
+  aboutText: "Dr. Vijay Ganesh Sankar is a DHA Eligible, European Board Certified Paediatric Surgeon with 15 years of Paediatric surgical experience post-M.Ch. Having received advanced training in Paediatric Robotic Surgery, he specializes in laparoscopic surgical procedures with a strong focus on advanced keyhole techniques, neonatal surgical emergencies, and pediatric urology. Known for excelling in high-stress environments, he is dedicated to putting young patients at ease and diagnosing even the most complex congenital and acquired disorders.",
   missionStatement: "To deliver advanced, minimally invasive, and robotic pediatric surgical care that meets the highest global clinical standards, minimizing recovery times and providing families with peace of mind.",
   visionStatement: "To lead clinical progress in pediatric keyhole surgery and robotic-assisted urological procedures, establishing a safe, child-first surgical environment locally.",
   philosophy: "Children are not miniature adults. They require delicate physical handling, specialized anatomical precision, and above all, a reassuring and gentle clinical presence that calms both the child and their family.",
@@ -141,21 +151,12 @@ export const doctorData: DoctorProfile = {
   hospitals: [
     {
       id: "hosp-1",
-      name: "KIMS Cuddles Mother and Child Centre",
-      logo: "KIMS Cuddles Logo",
-      location: "Visakhapatnam, Andhra Pradesh, India",
-      mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.883389083813!2d83.3323063!3d17.7502473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39433dc5e1e127%3A0xe54e60155b9a957b!2sKIMS%20Cuddles!5e0!3m2!1sen!2sin!4v1688172909400!5m2!1sen!2sin",
-      appointmentPhone: "+91 81299 89448",
-      address: "KIMS Cuddles, Unit of KIMS Group, Visakhapatnam, AP, India",
-    },
-    {
-      id: "hosp-2",
-      name: "Medicover Women and Child Hospital",
-      logo: "Medicover Logo",
-      location: "Visakhapatnam, Andhra Pradesh, India",
-      mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.308253163158!2d83.3086118!3d17.7766667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39430164cbf871%3A0x633519c6233a0dd5!2sMedicover%20Hospitals!5e0!3m2!1sen!2sin!4v1688173000000!5m2!1sen!2sin",
-      appointmentPhone: "+91 81299 89448",
-      address: "Medicover Women & Child Hospital, Visakhapatnam, AP, India",
+      name: "Aster Women and Children Hospital",
+      logo: "Aster Logo",
+      location: "Whitefield, Bangalore, India",
+      mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0016839352726!2d77.74780517596041!3d12.97177571558296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae13ad273bd639%3A0xe54e60155b9a957b!2sAster%20Women%20%26%20Children%20Hospital%20Whitefield!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+      appointmentPhone: "+91 80 4347 4347",
+      address: "Aster Women & Children Hospital, Whitefield, Bengaluru, Karnataka 560066",
     }
   ],
   education: [
@@ -312,13 +313,13 @@ export const doctorData: DoctorProfile = {
     {
       id: "time-1",
       role: "Senior Consultant Paediatric Surgery, Urology and Laparoscopy",
-      institution: "KIMS Cuddles Mother and Child Centre, unit of KIMS Group",
-      location: "Visakhapatnam, Andhra Pradesh, India",
-      period: "08/2024 - Present",
+      institution: "Aster Women & Children Hospital",
+      location: "Whitefield, Bengaluru, Karnataka, India",
+      period: "08/24 - Present",
       achievements: [
-        "Head of pediatric surgical services in a specialized 100+ bedded center",
-        "Focused on high-risk neonates, complicated deliveries, and fully-equipped PICU/NICU support",
-        "Pioneering advanced pediatric urology and keyhole programs"
+        "Senior Pediatric and Robotic Surgeon, leading neonatal reconstruction and urological services",
+        "Focused on state-of-the-art Level-IV NICU/PICU surgical emergencies",
+        "Pioneering advanced robotic and minimally invasive keyhole procedures"
       ]
     },
     {
@@ -425,7 +426,7 @@ export const doctorData: DoctorProfile = {
     {
       id: "faq-2",
       question: "Are your affiliated hospitals equipped for major neonatal emergencies?",
-      answer: "Yes. Both KIMS Cuddles and Medicover Women & Child Hospitals are top-tier facilities featuring fully-equipped Level-IV Neonatal Intensive Care Units (NICUs), Pediatric Intensive Care Units (PICUs), and 24/7 emergency response systems."
+      answer: "Yes. Aster Women & Children Hospital in Whitefield, Bangalore is a top-tier facility featuring fully-equipped Level-IV Neonatal Intensive Care Units (NICUs), Pediatric Intensive Care Units (PICUs), and 24/7 emergency response systems."
     },
     {
       id: "faq-3",
@@ -435,7 +436,7 @@ export const doctorData: DoctorProfile = {
     {
       id: "faq-4",
       question: "Can parents stay with the child during the hospital stay?",
-      answer: "Yes, family-centered care is essential. One parent is encouraged to stay next to the child's bed throughout the hospital stay, and our affiliated centers provide comfortable accommodation configurations for parent lodging."
+      answer: "Yes, family-centered care is essential. One parent is encouraged to stay next to the child's bed throughout the hospital stay, and Aster Women & Children Hospital provides comfortable accommodation configurations for parent lodging."
     }
   ],
   blogArticles: [
@@ -468,6 +469,32 @@ export const doctorData: DoctorProfile = {
       readTime: "6 min read",
       category: "Pediatric Urology",
       imagePlaceholder: "urology_guide"
+    }
+  ],
+  videos: [
+    {
+      id: "vid-1",
+      title: "Minimally Invasive Pediatric Laparoscopy: A Patient Guide",
+      duration: "4:15",
+      thumbnail: "/images/laparoscopic_surgery.jpg",
+      youtubeId: "dQw4w9WgXcQ",
+      description: "An educational overview of how 3mm micro-incisions are utilized in keyhole surgeries for infants and children."
+    },
+    {
+      id: "vid-2",
+      title: "Neonatal Reconstructive Surgery & Advanced NICU Support",
+      duration: "5:30",
+      thumbnail: "/images/neonatal_care.png",
+      youtubeId: "dQw4w9WgXcQ",
+      description: "Understanding the clinical setup and surgical approach for correcting congenital birth conditions in newborns."
+    },
+    {
+      id: "vid-3",
+      title: "Pediatric Robotic Reconstructive Urology Innovations",
+      duration: "3:45",
+      thumbnail: "/images/robotic_surgery.png",
+      youtubeId: "dQw4w9WgXcQ",
+      description: "A look into precision robotic-assisted urological procedures, including robotic pyeloplasty and reconstructions."
     }
   ]
 };

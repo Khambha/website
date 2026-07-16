@@ -65,7 +65,7 @@ export const Hero: React.FC = () => {
             variants={itemVariants}
             className="font-sans text-lg text-slate-650 leading-relaxed max-w-xl mb-8"
           >
-            Dr. <span className="font-semibold text-brand-navy">{doctorData.name}</span>, specializing in advanced neonatal reconstruction, laparoscopic keyhole surgery, and urology, offers your child world-class clinical expertise combined with compassionate care.
+            Dr. <span className="font-semibold text-brand-navy">{doctorData.name}</span>, specializing in advanced neonatal reconstruction , and urology, offers your child world-class clinical expertise combined with compassionate care.
           </motion.p>
 
           {/* CTAs */}
@@ -82,7 +82,7 @@ export const Hero: React.FC = () => {
               <Calendar className="h-5 w-5 transition-transform group-hover:scale-110" />
               <span>Book Consultation</span>
             </Button>
-            
+
             <a href={`tel:${doctorData.contactPhone.replace(/\s+/g, "")}`}>
               <Button
                 variant="outline"
@@ -94,20 +94,19 @@ export const Hero: React.FC = () => {
               </Button>
             </a>
           </motion.div>
-          {/* Hospital Affiliations Trust Area */}
-          <motion.div variants={itemVariants} className="mt-10 pt-6 border-t border-slate-100 flex flex-col items-start gap-3 w-full max-w-xl">
-            <span className="text-[10px] font-bold text-slate-450 uppercase tracking-widest">
-              Hospital Affiliations
+
+          {/* Associated Hospital Info */}
+          <motion.div
+            variants={itemVariants}
+            className="mt-6 flex flex-wrap items-center gap-3 text-sm text-slate-650 border-t border-slate-100 pt-6 w-full max-w-xl text-left"
+          >
+            <span className="text-[10px] font-bold text-slate-450 uppercase tracking-widest block w-full mb-1">
+              Primary Affiliation
             </span>
-            <div className="flex flex-wrap gap-x-6 gap-y-3 items-center">
-              <span className="flex items-center gap-2 text-sm font-semibold text-brand-navy hover:text-brand-green transition-colors duration-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-blue shrink-0"></span>
-                KIMS Cuddles Mother & Child Centre
-              </span>
-              <span className="h-3.5 w-[1px] bg-slate-200 hidden sm:inline" />
-              <span className="flex items-center gap-2 text-sm font-semibold text-brand-navy hover:text-brand-green transition-colors duration-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-green shrink-0"></span>
-                Medicover Women & Child Hospital
+            <div className="flex items-center gap-2.5 bg-brand-blue-light/10 border border-brand-blue/10 px-4 py-2 rounded-xl text-brand-navy">
+              <span className="w-2 h-2 rounded-full bg-brand-blue shrink-0 animate-pulse" />
+              <span className="font-semibold text-sm">
+                Aster Women and Children Hospital, Whitefield, Bangalore
               </span>
             </div>
           </motion.div>
@@ -123,12 +122,12 @@ export const Hero: React.FC = () => {
           >
             {/* Real Doctor Headshot Image */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img 
-              src="/images/dr_vijayganesh.png" 
-              alt={`Dr. ${doctorData.name}`} 
+            <img
+              src="/images/dr_vijayganesh.png"
+              alt={`Dr. ${doctorData.name}`}
               className="w-full h-full object-cover object-center zoom-image"
             />
-            
+
             {/* Elegant overlay gradient on bottom of image for readability */}
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/40 to-transparent p-6 text-left flex flex-col justify-end">
               <h3 className="font-display font-bold text-xl text-white">Dr. {doctorData.name}</h3>

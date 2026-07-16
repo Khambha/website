@@ -5,10 +5,8 @@ import { Trust } from "@/components/sections/Trust";
 import { About } from "@/components/sections/About";
 import { Expertise } from "@/components/sections/Expertise";
 import { WhyChoose } from "@/components/sections/WhyChoose";
-import { Experience } from "@/components/sections/Experience";
 import { Education } from "@/components/sections/Education";
 import { Stats } from "@/components/sections/Stats";
-import { Affiliations } from "@/components/sections/Affiliations";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
 import { Blog } from "@/components/sections/Blog";
@@ -41,14 +39,8 @@ export default function Home() {
         {/* 6. Surgeon Advantages & Values */}
         <WhyChoose />
 
-        {/* 7. Career Timeline */}
-        <Experience />
-
         {/* 8. Credentials Tab Switcher */}
         <Education />
-
-        {/* 9. Hospital Affiliations Map Directory */}
-        <Affiliations />
 
         {/* 10. Testimonials Carousel */}
         <Testimonials />
