@@ -3,7 +3,6 @@ import { Navbar } from "@/components/sections/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { Trust } from "@/components/sections/Trust";
 import { About } from "@/components/sections/About";
-import { WhyChoose } from "@/components/sections/WhyChoose";
 import { Education } from "@/components/sections/Education";
 import { Stats } from "@/components/sections/Stats";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -32,9 +31,6 @@ export default function Home() {
 
         {/* 3. Trust Credentials */}
         <Trust />
-
-        {/* 6. Surgeon Advantages & Values */}
-        <WhyChoose />
 
         {/* 8. Credentials Tab Switcher */}
         <Education />

@@ -90,7 +90,7 @@ export const Education: React.FC = () => {
           </div>
 
           {/* Journey Steps (Desktop layout grid columns, Mobile layout list blocks) */}
-          <div className="space-y-16 md:space-y-24 relative z-10 w-full">
+          <div className="space-y-6 md:space-y-8 relative z-10 w-full">
             {items.map((item, idx) => {
               const isEven = idx % 2 === 0;
 
