@@ -91,7 +91,7 @@ export const Navbar: React.FC = () => {
           {/* CTAs */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href={`tel:${doctorData.contactPhone.replace(/\s+/g, "")}`}
+              href={`tel:${doctorData.contactPhone.replace(/[^+\d]/g, "")}`}
               className="flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-brand-blue transition-colors py-2 px-3 rounded-lg focus:outline-none"
             >
               <Phone className="h-4 w-4 text-brand-green" />
@@ -154,7 +154,7 @@ export const Navbar: React.FC = () => {
 
             <div className="flex flex-col gap-4 mt-8">
               <a
-                href={`tel:${doctorData.contactPhone.replace(/\s+/g, "")}`}
+                href={`tel:${doctorData.contactPhone.replace(/[^+\d]/g, "")}`}
                 className="flex items-center justify-center gap-3 p-4 rounded-lg bg-slate-50 border border-slate-200 font-bold text-slate-700 hover:text-brand-blue text-center"
               >
                 <Phone className="h-5 w-5 text-brand-green" />

@@ -53,6 +53,28 @@ export const Appointment: React.FC = () => {
       const resData = await response.json();
 
       if (response.ok) {
+        // Construct WhatsApp message template text
+        const urgentHeader = data.isEmergency 
+          ? "🚨 *URGENT EMERGENCY CONSULTATION* 🚨\n" 
+          : "*New Consultation Appointment Request*\n";
+
+        const whatsappText = `${urgentHeader}` +
+          `-----------------------------------------\n` +
+          `• *Parent Name:* ${data.name}\n` +
+          `• *Phone:* ${data.phone}\n` +
+          `• *Email:* ${data.email}\n` +
+          `• *Preferred Date:* ${data.preferredDate}\n` +
+          `• *Case Details:* ${data.message || "None provided"}\n` +
+          `-----------------------------------------`;
+
+        const cleanPhone = doctorData.whatsappNumber.replace(/\+/g, "").replace(/\s+/g, "");
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=${cleanPhone}&text=${encodeURIComponent(whatsappText)}`;
+
+        // Redirect to WhatsApp in a new tab
+        if (typeof window !== "undefined") {
+          window.open(whatsappUrl, "_blank");
+        }
+
         setSuccessData(resData.message);
         reset();
       } else {

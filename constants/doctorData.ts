@@ -140,9 +140,9 @@ export const doctorData: DoctorProfile = {
   visionStatement: "To lead clinical progress in pediatric keyhole surgery and robotic-assisted urological procedures, establishing a safe, child-first surgical environment locally.",
   philosophy: "Children are not miniature adults. They require delicate physical handling, specialized anatomical precision, and above all, a reassuring and gentle clinical presence that calms both the child and their family.",
   contactEmail: "drvijayganeshsankar@gmail.com",
-  contactPhone: "+91 XXXXX XXXXX",
-  emergencyPhone: "+91 XXXXX XXXXX (EMERGENCY ONLY)",
-  whatsappNumber: "+910000000000",
+  contactPhone: "+91 73865 40480",
+  emergencyPhone: "+91 73865 40480 (EMERGENCY ONLY)",
+  whatsappNumber: "+917386540480",
   workingHours: "Mon - Sat: 9:00 AM - 5:00 PM (Emergency 24/7)",
   socialLinks: {
     linkedin: "https://www.linkedin.com/pub/vijayganesh/79/3",

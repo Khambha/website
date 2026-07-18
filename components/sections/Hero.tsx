@@ -83,15 +83,12 @@ export const Hero: React.FC = () => {
               <span>Book Consultation</span>
             </Button>
 
-            <a href={`tel:${doctorData.contactPhone.replace(/\s+/g, "")}`}>
-              <Button
-                variant="outline"
-                size="lg"
-                className="flex items-center gap-2 border border-slate-300 hover:border-brand-blue hover:text-brand-blue text-slate-700 bg-white font-semibold transition-all duration-300"
-              >
-                <Phone className="h-5 w-5 text-brand-green" />
-                <span>Call Clinic</span>
-              </Button>
+            <a
+              href={`tel:${doctorData.contactPhone.replace(/\s+/g, "")}`}
+              className="inline-flex items-center justify-center gap-2 border border-slate-300 hover:border-brand-blue hover:text-brand-blue text-slate-700 bg-white font-semibold transition-all duration-300 px-8 py-3 rounded-lg text-sm shadow-sm"
+            >
+              <Phone className="h-5 w-5 text-brand-green" />
+              <span>Call Clinic</span>
             </a>
           </motion.div>
 
