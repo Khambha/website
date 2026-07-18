@@ -11,10 +11,10 @@ export const About: React.FC = () => {
     <section id="about" className="py-16 bg-slate-50/50 font-sans scroll-mt-20 relative overflow-hidden">
       {/* Subtle decorative background glow */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-brand-blue-light/5 rounded-full blur-3xl pointer-events-none" />
-      
+
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <SectionTitle
-          title="About Dr. Vijay Ganesh Sankar"
+          title="About Dr Vijay Ganesh Sankar"
           subtitle="Combining global certification with child-first clinical compassion."
           badge="Meet the Surgeon"
         />
@@ -42,11 +42,11 @@ export const About: React.FC = () => {
                   Care Philosophy
                 </span>
               </div>
-              
+
               <blockquote className="font-sans italic text-slate-700 text-base leading-relaxed mb-6">
                 &ldquo;{doctorData.philosophy}&rdquo;
               </blockquote>
-              
+
               <div className="border-t border-slate-100 pt-4 flex justify-between items-center text-[10px] tracking-wider text-slate-400 uppercase font-semibold">
                 <span>Pediatric Surgery</span>
                 <span className="text-brand-navy">Dr. {doctorData.name}</span>
@@ -57,7 +57,7 @@ export const About: React.FC = () => {
 
         {/* Bottom Row: Clinical Focus & Care Standards (Symmetric Parallel Cards) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-          
+
           {/* Clinical Focus Card */}
           <Card className="bg-white border border-slate-200/80 shadow-premium p-8 md:p-10 rounded-2xl text-left flex flex-col justify-between">
             <div>
@@ -65,7 +65,7 @@ export const About: React.FC = () => {
                 <Shield className="h-5 w-5 text-brand-green" />
                 <span>Clinical Focus & Areas of Practice</span>
               </h4>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <CheckCircle2 className="h-5.5 w-5.5 text-brand-green shrink-0 mt-0.5" />
@@ -109,7 +109,7 @@ export const About: React.FC = () => {
                 <HeartPulse className="h-5 w-5 text-brand-blue" />
                 <span>Our Patient Care Standards</span>
               </h4>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <span className="w-2 h-2 rounded-full bg-brand-blue mt-2 shrink-0 animate-pulse" />

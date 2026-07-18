@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import { GraduationCap, Award, Landmark, Medal, CheckCircle2, ChevronRight } from "lucide-react";
+import { GraduationCap, Landmark, CheckCircle2, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import { SectionTitle } from "@/components/SectionTitle";
@@ -10,7 +10,6 @@ import { cn } from "@/lib/utils";
 
 export const Education: React.FC = () => {
   const [isBoardsOpen, setIsBoardsOpen] = useState(false);
-  const [isAwardsOpen, setIsAwardsOpen] = useState(false);
   
   const containerRef = useRef<HTMLDivElement>(null);
   
@@ -267,54 +266,6 @@ export const Education: React.FC = () => {
             </AnimatePresence>
           </div>
 
-          {/* Drawer 2: Awards & Honors */}
-          <div className="border border-slate-200/80 rounded-2xl bg-white shadow-soft overflow-hidden">
-            <button
-              type="button"
-              onClick={() => setIsAwardsOpen(!isAwardsOpen)}
-              className="w-full py-6 px-8 flex items-center justify-between text-brand-navy hover:text-brand-green hover:bg-slate-50/50 transition-colors duration-300 focus:outline-none"
-            >
-              <div className="flex items-center gap-3">
-                <Award className="h-5.5 w-5.5 text-brand-gold" />
-                <span className="font-display font-bold text-lg md:text-xl">Awards & Honors</span>
-              </div>
-              <motion.div
-                animate={{ rotate: isAwardsOpen ? 90 : 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <ChevronRight className="h-5 w-5" />
-              </motion.div>
-            </button>
-
-            <AnimatePresence initial={false}>
-              {isAwardsOpen && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1, transition: { height: { type: "spring", stiffness: 100, damping: 18 } } }}
-                  exit={{ height: 0, opacity: 0 }}
-                  className="overflow-hidden"
-                >
-                  <div className="p-8 border-t border-slate-100 bg-slate-50/20 grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {doctorData.awards.map((award, idx) => (
-                      <Card key={idx} className="p-5 bg-white border-slate-200/60 shadow-soft flex items-start gap-3 text-left">
-                        <div className="h-8.5 w-8.5 shrink-0 rounded-lg bg-brand-green-light text-brand-green flex items-center justify-center">
-                          <Medal className="h-4.5 w-4.5" />
-                        </div>
-                        <div className="space-y-1">
-                          <span className="text-[10px] font-bold text-brand-blue uppercase tracking-wider">{award.year}</span>
-                          <h5 className="font-display font-bold text-sm text-brand-navy">{award.title}</h5>
-                          <p className="text-[10px] text-slate-500 font-medium">{award.issuer}</p>
-                          <p className="text-xs text-slate-500 font-sans pt-1.5 border-t border-slate-50 leading-relaxed">
-                            {award.description}
-                          </p>
-                        </div>
-                      </Card>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
 
         </div>
 
