@@ -30,9 +30,10 @@ export interface Award {
 export interface Treatment {
   id: string;
   title: string;
-  shortDescription: string;
-  fullDescription: string;
-  iconName: string;
+  badge: string;
+  image: string;
+  description: string;
+  procedures: string[];
 }
 
 export interface WhyChooseReason {
@@ -242,45 +243,81 @@ export const doctorData: DoctorProfile = {
   treatments: [
     {
       id: "treat-1",
-      title: "Paediatric Robotic Surgery",
-      shortDescription: "Precision robotic-assisted surgeries for children.",
-      fullDescription: "Using the state-of-the-art robotic surgical suites to perform extremely delicate reconstructions inside tight anatomical cavities in children, maximizing visibility and precision.",
-      iconName: "Cpu"
+      title: "Pediatric Robotic Surgery",
+      badge: "Robotic Specialist",
+      image: "/images/robotic_surgery.png",
+      description: "State-of-the-art robotic-assisted reconstructive operations for children.",
+      procedures: [
+        "Robotic Pyeloplasty (Drainage)",
+        "Robotic Ureteric Re-implantation",
+        "Robotic Choledochal Cyst Resection",
+        "Micro-invasive reconstructions"
+      ]
     },
     {
       id: "treat-2",
-      title: "Neonatal Surgical Emergencies",
-      shortDescription: "Life-saving operations on newborns and preemies.",
-      fullDescription: "Emergency correction of critical birth anomalies including Congenital Diaphragmatic Hernia (CDH), esophageal atresia, bowel obstruction, and intestinal atresia in Level-IV NICUs.",
-      iconName: "Heart"
+      title: "Neonatal Reconstruction",
+      badge: "Neonatal Care",
+      image: "/images/neonatal_care.png",
+      description: "Immediate emergency correction of congenital birth anomalies in newborns and preemies.",
+      procedures: [
+        "Diaphragmatic Hernia (CDH) Repair",
+        "Tracheoesophageal Fistula Repair",
+        "Anorectal Malformations Correction",
+        "Intestinal Atresia & Volvulus Correction"
+      ]
     },
     {
       id: "treat-3",
       title: "Laparoscopic Keyhole Surgery",
-      shortDescription: "Minimally invasive abdominal and chest operations.",
-      fullDescription: "Performing pediatric thoracoscopic repair, appendectomy, hernia repair, orchidopexy, and ovarian surgery through micro-incisions (3mm) to reduce scarring and speed recovery.",
-      iconName: "Scissors"
+      badge: "Keyhole Precision",
+      image: "/images/laparoscopic_surgery.jpg",
+      description: "Advanced diagnostic and therapeutic surgical access via 3mm micro-incisions.",
+      procedures: [
+        "Laparoscopic Hernia & Hydrocele",
+        "Laparoscopic Appendectomy",
+        "Orchidopexy (Undescended Testis)",
+        "Thoracoscopic Lung Operations"
+      ]
     },
     {
       id: "treat-4",
-      title: "Paediatric Urology & Endourology",
-      shortDescription: "Treatment of congenital and acquired urinary conditions.",
-      fullDescription: "Advanced urologic corrections including undescended testis (UDT), hypospadias repairs, and endourological procedures (such as fulguration and glue injections).",
-      iconName: "Activity"
+      title: "Reconstructive Urology",
+      badge: "Urology Expert",
+      image: "/images/reconstructive_urology.png",
+      description: "Complete repair of complex congenital defects of the urinary and reproductive tracts.",
+      procedures: [
+        "Hypospadias Surgical Repairs",
+        "Vesicoureteral Reflux (VUR) Deflux",
+        "Bladder Epispadias Reconstruction",
+        "Posterior Urethral Valve Ablation"
+      ]
     },
     {
       id: "treat-5",
       title: "Congenital Defect Correction",
-      shortDescription: "Reconstructive procedures for childhood birth defects.",
-      fullDescription: "Full anatomical reconstruction of gastrointestinal and respiratory defects, including Hirschsprung's disease, diaphragmatic defects, and esophageal anomalies.",
-      iconName: "Stethoscope"
+      badge: "Reconstructive Specialist",
+      image: "/images/congenital_defect.jpg",
+      description: "Full anatomical reconstruction of complex gastrointestinal and thoracic birth defects.",
+      procedures: [
+        "Hirschsprung's Disease Surgery",
+        "Choledochal Cyst Excision",
+        "Bowel Atresia & Stenosis Repair",
+        "Diaphragmatic Defect Repairs"
+      ]
     },
     {
       id: "treat-6",
-      title: "Paediatric Surgical Oncology",
-      shortDescription: "Surgical removal of solid childhood tumors.",
-      fullDescription: "Highly coordinated resections of pediatric solid tumors (neuroblastoma, Wilms' tumor, teratoma) optimized to retain organ function and support oncology therapies.",
-      iconName: "ShieldAlert"
+      title: "Pediatric Surgical Oncology",
+      badge: "Oncology Expert",
+      image: "/images/surgical_oncology.png",
+      description: "Highly coordinated and precise surgical resections of solid childhood tumors.",
+      procedures: [
+        "Wilms' Tumor Resection",
+        "Neuroblastoma Surgery",
+        "Teratoma & Sacrococcygeal Excision",
+        "Organ-Sparing Tumor Resections"
+      ]
     }
   ],
   whyChooseUs: [

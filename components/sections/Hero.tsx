@@ -103,12 +103,17 @@ export const Hero: React.FC = () => {
             <span className="text-[10px] font-bold text-slate-450 uppercase tracking-widest block w-full mb-1">
               Primary Affiliation
             </span>
-            <div className="flex items-center gap-2.5 bg-brand-blue-light/10 border border-brand-blue/10 px-4 py-2 rounded-xl text-brand-navy">
-              <span className="w-2 h-2 rounded-full bg-brand-blue shrink-0 animate-pulse" />
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Aster+Women+and+Children+Hospital+Whitefield+Bangalore"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2.5 bg-brand-blue-light/10 border border-brand-blue/10 hover:border-brand-green/30 hover:bg-brand-green-light/5 hover:text-brand-green px-4 py-2 rounded-xl text-brand-navy transition-all duration-300 cursor-pointer group/badge"
+            >
+              <span className="w-2 h-2 rounded-full bg-brand-blue shrink-0 animate-pulse group-hover/badge:bg-brand-green" />
               <span className="font-semibold text-sm">
                 Aster Women and Children Hospital, Whitefield, Bangalore
               </span>
-            </div>
+            </a>
           </motion.div>
         </motion.div>
 
@@ -123,7 +128,7 @@ export const Hero: React.FC = () => {
             {/* Real Doctor Headshot Image */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/dr_vijayganesh.png"
+              src="/images/dr_image.jpeg"
               alt={`Dr. ${doctorData.name}`}
               className="w-full h-full object-cover object-center zoom-image"
             />

@@ -7,8 +7,13 @@ import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { SectionTitle } from "@/components/SectionTitle";
 import { doctorData } from "@/constants/doctorData";
+import { cn } from "@/lib/utils";
 
-export const Testimonials: React.FC = () => {
+interface TestimonialsProps {
+  hideHeader?: boolean;
+}
+
+export const Testimonials: React.FC<TestimonialsProps> = ({ hideHeader = false }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
@@ -55,13 +60,15 @@ export const Testimonials: React.FC = () => {
   };
 
   return (
-    <section id="testimonials" className="py-20 bg-medical-bg font-sans scroll-mt-20">
+    <section id="testimonials" className={cn(hideHeader ? "py-0 bg-transparent" : "py-20 bg-medical-bg", "font-sans scroll-mt-20")}>
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <SectionTitle
-          title="Stories of Healing & Hope"
-          subtitle="Real experiences shared by parents. We treat every child with the same care and precision we would expect for our own."
-          badge="Patient Testimonials"
-        />
+        {!hideHeader && (
+          <SectionTitle
+            title="Stories of Healing & Hope"
+            subtitle="Real experiences shared by parents. We treat every child with the same care and precision we would expect for our own."
+            badge="Patient Testimonials"
+          />
+        )}
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Panel: Text Testimonial Slider */}

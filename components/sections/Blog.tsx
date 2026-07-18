@@ -5,18 +5,25 @@ import { Calendar, Clock, ArrowUpRight, Play, X } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { SectionTitle } from "@/components/SectionTitle";
 import { doctorData } from "@/constants/doctorData";
+import { cn } from "@/lib/utils";
 
-export const Blog: React.FC = () => {
+interface BlogProps {
+  hideHeader?: boolean;
+}
+
+export const Blog: React.FC<BlogProps> = ({ hideHeader = false }) => {
   const [activeVideo, setActiveVideo] = useState<typeof doctorData.videos[0] | null>(null);
 
   return (
-    <section id="blog" className="py-20 bg-medical-bg font-sans scroll-mt-20">
+    <section id="blog" className={cn(hideHeader ? "py-0 bg-transparent" : "py-20 bg-medical-bg", "font-sans scroll-mt-20")}>
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <SectionTitle
-          title="Parent Education & Health Resources"
-          subtitle={`Insightful video guides and articles co-authored by Dr. ${doctorData.name} to help parents understand pediatric health, surgery prep, and recovery.`}
-          badge="Resources & Education"
-        />
+        {!hideHeader && (
+          <SectionTitle
+            title="Parent Education & Health Resources"
+            subtitle={`Insightful video guides and articles co-authored by Dr. ${doctorData.name} to help parents understand pediatric health, surgery prep, and recovery.`}
+            badge="Resources & Education"
+          />
+        )}
 
         {/* Video Library Section (On Top) */}
         <div className="mb-16">

@@ -1,14 +1,14 @@
 "use client";
 
 import React from "react";
-import { Compass, Eye, HeartHandshake, GraduationCap } from "lucide-react";
+import { Compass, Eye, HeartHandshake } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { SectionTitle } from "@/components/SectionTitle";
 import { doctorData } from "@/constants/doctorData";
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-20 bg-medical-bg font-sans scroll-mt-20">
+    <section id="about" className="py-12 bg-medical-bg font-sans scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <SectionTitle
           title={`Meet Dr. ${doctorData.name}`}
@@ -81,35 +81,6 @@ export const About: React.FC = () => {
                 <span>Dr. {doctorData.name}</span>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Education Highlight Board */}
-        <div className="mt-16 bg-white border border-medical-border rounded-2xl p-8 md:p-12 shadow-soft relative overflow-hidden">
-          <div className="flex items-center gap-3 mb-8 relative z-10">
-            <div className="h-10 w-10 rounded-lg bg-brand-blue-light text-brand-blue flex items-center justify-center">
-              <GraduationCap className="h-6 w-6" />
-            </div>
-            <h3 className="font-display font-bold text-2xl text-brand-navy">Academic Foundations</h3>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
-            {doctorData.education.map((item, index) => (
-              <div key={index} className="flex flex-col text-left border-l-2 border-brand-gold/30 pl-6 relative">
-                {/* Visual bullet marker */}
-                <div className="absolute top-1.5 -left-[5px] h-2 w-2 rounded-full bg-brand-gold shadow-sm" />
-                
-                <span className="text-xs font-bold text-brand-green uppercase tracking-wider mb-1">
-                  Class of {item.year}
-                </span>
-                <h4 className="font-display font-bold text-lg text-brand-navy mb-2 leading-snug">
-                  {item.degree}
-                </h4>
-                <p className="text-sm text-slate-500 font-sans leading-relaxed">
-                  {item.institution}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </div>
