@@ -135,7 +135,7 @@ export const doctorData: DoctorProfile = {
   patientsTreated: "10,000+",
   surgeriesPerformed: "6,000+",
   hospitalsServed: "6+",
-  aboutText: "Dr. Vijay Ganesh Sankar is a DHA Eligible, European Board Certified Paediatric Surgeon with 15 years of Paediatric surgical experience post-M.Ch. Having received advanced training in Paediatric Robotic Surgery, he specializes in laparoscopic surgical procedures with a strong focus on advanced keyhole techniques, neonatal surgical emergencies, and pediatric urology. Known for excelling in high-stress environments, he is dedicated to putting young patients at ease and diagnosing even the most complex congenital and acquired disorders.",
+  aboutText: "Dr. Vijay Ganesh Sankar is a European Board Certified Paediatric Surgeon with 15 years of Paediatric surgical experience post-M.Ch. Having received advanced training in Paediatric Robotic Surgery, he specializes in laparoscopic surgical procedures with a strong focus on advanced keyhole techniques, neonatal surgical emergencies, and pediatric urology. Known for excelling in high-stress environments, he is dedicated to putting young patients at ease and diagnosing even the most complex congenital and acquired disorders.",
   missionStatement: "To deliver advanced, minimally invasive, and robotic pediatric surgical care that meets the highest global clinical standards, minimizing recovery times and providing families with peace of mind.",
   visionStatement: "To lead clinical progress in pediatric keyhole surgery and robotic-assisted urological procedures, establishing a safe, child-first surgical environment locally.",
   philosophy: "Children are not miniature adults. They require delicate physical handling, specialized anatomical precision, and above all, a reassuring and gentle clinical presence that calms both the child and their family.",
@@ -200,11 +200,6 @@ export const doctorData: DoctorProfile = {
     }
   ],
   boardCertifications: [
-    {
-      name: "DHA Eligibility Certified Paediatric Surgeon",
-      issuer: "Dubai Health Authority (Eligibility ID: 25922089)",
-      year: "2025"
-    },
     {
       name: "Paediatric Advanced Life Support (PALS)",
       issuer: "American Heart Association",
