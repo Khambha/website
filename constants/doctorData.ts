@@ -127,7 +127,7 @@ export interface DoctorProfile {
 }
 
 export const doctorData: DoctorProfile = {
-  name: "Vijay Ganesh Sankar",
+  name: "Vijay Ganesh",
   title: "Senior Consultant Paediatric Surgeon",
   tagline: "15+ years of specialized pediatric urology, laparoscopy, and neonatal reconstructive surgery.",
   qualificationsSummary: "MBBS, MS, MCh, FICRS, FEBPS, FMAS, FIAGES",
@@ -135,7 +135,7 @@ export const doctorData: DoctorProfile = {
   patientsTreated: "10,000+",
   surgeriesPerformed: "6,000+",
   hospitalsServed: "6+",
-  aboutText: "Dr. Vijay Ganesh Sankar is a European Board Certified Paediatric Surgeon with 15 years of Paediatric surgical experience post-M.Ch. Having received advanced training in Paediatric Robotic Surgery, he specializes in laparoscopic surgical procedures with a strong focus on advanced keyhole techniques, neonatal surgical emergencies, and pediatric urology. Known for excelling in high-stress environments, he is dedicated to putting young patients at ease and diagnosing even the most complex congenital and acquired disorders.",
+  aboutText: "Dr. Vijay Ganesh is a European Board Certified Paediatric Surgeon with 15 years of Paediatric surgical experience post-M.Ch. Having received advanced training in Paediatric Robotic Surgery, he specializes in laparoscopic surgical procedures with a strong focus on advanced keyhole techniques, neonatal surgical emergencies, and pediatric urology. Known for excelling in high-stress environments, he is dedicated to putting young patients at ease and diagnosing even the most complex congenital and acquired disorders.",
   missionStatement: "To deliver advanced, minimally invasive, and robotic pediatric surgical care that meets the highest global clinical standards, minimizing recovery times and providing families with peace of mind.",
   visionStatement: "To lead clinical progress in pediatric keyhole surgery and robotic-assisted urological procedures, establishing a safe, child-first surgical environment locally.",
   philosophy: "Children are not miniature adults. They require delicate physical handling, specialized anatomical precision, and above all, a reassuring and gentle clinical presence that calms both the child and their family.",
@@ -429,7 +429,7 @@ export const doctorData: DoctorProfile = {
       patientName: "Parent of Baby Rohan",
       condition: "Congenital Diaphragmatic Hernia Repair",
       rating: 5,
-      story: "We were extremely anxious when Rohan was diagnosed with a diaphragmatic hernia at birth. Dr. Vijayganesh Sankar performed a thoracoscopic repair keyhole when Rohan was just days old. Rohan is now perfectly healthy and active. We are extremely grateful for Dr. Vijayganesh's incredible surgical precision and supportive care.",
+      story: "We were extremely anxious when Rohan was diagnosed with a diaphragmatic hernia at birth. Dr. Vijay Ganesh performed a thoracoscopic repair keyhole when Rohan was just days old. Rohan is now perfectly healthy and active. We are extremely grateful for Dr. Vijay Ganesh's incredible surgical precision and supportive care.",
       avatarText: "PR"
     },
     {
@@ -437,7 +437,7 @@ export const doctorData: DoctorProfile = {
       patientName: "Parent of Ananya (Age 4)",
       condition: "Laparoscopic Choledochal Cyst Correction",
       rating: 5,
-      story: "Ananya had severe abdominal pain and a cyst diagnosis. Dr. Vijayganesh explained the keyhole surgical plan clearly, which put us at ease. The surgery was extremely successful, and the recovery was much faster than we expected. She was playing in the ward within 36 hours.",
+      story: "Ananya had severe abdominal pain and a cyst diagnosis. Dr. Vijay Ganesh explained the keyhole surgical plan clearly, which put us at ease. The surgery was extremely successful, and the recovery was much faster than we expected. She was playing in the ward within 36 hours.",
       avatarText: "PA"
     },
     {

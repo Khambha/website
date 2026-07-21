@@ -14,7 +14,7 @@ export const About: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <SectionTitle
-          title="About Dr Vijay Ganesh Sankar"
+          title="About Dr Vijay Ganesh"
           subtitle="Combining global certification with child-first clinical compassion."
           badge="Meet the Surgeon"
         />

@@ -51,7 +51,7 @@ export default function Home() {
           id="blog"
           badge="Resources & Education"
           title="Parent Education & Health Resources"
-          subtitle="Insightful video guides and articles co-authored by Dr. Vijay Ganesh Sankar to help parents understand pediatric health, surgery prep, and recovery."
+          subtitle="Insightful video guides and articles co-authored by Dr. Vijay Ganesh to help parents understand pediatric health, surgery prep, and recovery."
           bgClass="bg-medical-bg"
         >
           <Blog hideHeader />

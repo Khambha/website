@@ -65,7 +65,7 @@ export const Hero: React.FC = () => {
             variants={itemVariants}
             className="font-sans text-lg text-slate-650 leading-relaxed max-w-xl mb-8"
           >
-            Dr. <span className="font-semibold text-brand-navy">{doctorData.name}</span>, specializing in advanced neonatal reconstruction , and urology, offers your child world-class clinical expertise combined with compassionate care.
+            Dr. <span className="font-semibold text-brand-navy">{doctorData.name}</span>, specializing in advanced neonatal reconstruction and urology, offers your child world-class clinical expertise combined with compassionate care.
           </motion.p>
 
           {/* CTAs */}

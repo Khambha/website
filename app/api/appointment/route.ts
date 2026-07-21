@@ -30,7 +30,7 @@ export async function POST(request: Request) {
         });
 
         await transporter.sendMail({
-          from: `"Dr. Vijay Ganesh Sankar Website" <${process.env.EMAIL_USER}>`,
+          from: `"Dr. Vijay Ganesh Website" <${process.env.EMAIL_USER}>`,
           to: "drvijayganeshsankar@gmail.com",
           subject: `🚨 EMERGENCY CONSULTATION REQUEST - ${parsedData.name}`,
           html: `
