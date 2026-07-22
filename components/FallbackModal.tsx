@@ -60,7 +60,7 @@ export const FallbackModal: React.FC<FallbackModalProps> = ({ isOpen, onClose })
 
             {/* Explanation text */}
             <p className="text-slate-650 font-sans text-xs md:text-sm mt-4 leading-relaxed">
-              If WhatsApp didn&apos;t launch automatically on your desktop, you can connect with our clinic instantly via a direct phone call.
+              We are happy to assist you with your child&apos;s surgical care. Please feel free to call our desk directly to coordinate your consultation or answer any immediate questions.
             </p>
 
             {/* High-contrast CTA Dialer Button */}
