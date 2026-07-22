@@ -23,36 +23,53 @@ export default function Home() {
     const handleOpenModal = () => setIsModalOpen(true);
     window.addEventListener("open-fallback-modal", handleOpenModal);
 
-    // 2. Exit Intent Trigger Logic (Desktop only)
+    // Check if user has already seen the popup in this session
+    const hasSeenModal = sessionStorage.getItem("seen-bottom-scroll-or-exit");
+    if (hasSeenModal) {
+      return () => {
+        window.removeEventListener("open-fallback-modal", handleOpenModal);
+      };
+    }
+
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
     if (isMobile) {
+      // Phone logic: scroll to bottom trigger (within 150px of bottom)
+      const handleScroll = () => {
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+
+        if (windowHeight + scrollTop >= documentHeight - 150) {
+          setIsModalOpen(true);
+          sessionStorage.setItem("seen-bottom-scroll-or-exit", "true");
+          window.removeEventListener("scroll", handleScroll);
+        }
+      };
+
+      window.addEventListener("scroll", handleScroll);
+
       return () => {
         window.removeEventListener("open-fallback-modal", handleOpenModal);
+        window.removeEventListener("scroll", handleScroll);
       };
-    }
+    } else {
+      // Desktop logic: exit intent (mouseleave)
+      const handleMouseLeave = (e: MouseEvent) => {
+        if (e.clientY <= 0) {
+          setIsModalOpen(true);
+          sessionStorage.setItem("seen-bottom-scroll-or-exit", "true");
+          document.removeEventListener("mouseleave", handleMouseLeave);
+        }
+      };
 
-    const hasSeenExitIntent = sessionStorage.getItem("seen-exit-intent");
-    if (hasSeenExitIntent) {
+      document.addEventListener("mouseleave", handleMouseLeave);
+
       return () => {
         window.removeEventListener("open-fallback-modal", handleOpenModal);
-      };
-    }
-
-    const handleMouseLeave = (e: MouseEvent) => {
-      // clientY <= 0 triggers exactly when the cursor leaves the window top (e.g. to address bar)
-      if (e.clientY <= 0) {
-        setIsModalOpen(true);
-        sessionStorage.setItem("seen-exit-intent", "true");
         document.removeEventListener("mouseleave", handleMouseLeave);
-      }
-    };
-
-    document.addEventListener("mouseleave", handleMouseLeave);
-
-    return () => {
-      window.removeEventListener("open-fallback-modal", handleOpenModal);
-      document.removeEventListener("mouseleave", handleMouseLeave);
-    };
+      };
+    }
   }, []);
 
   return (

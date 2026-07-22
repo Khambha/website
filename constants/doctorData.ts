@@ -110,6 +110,7 @@ export interface DoctorProfile {
     linkedin: string;
     twitter: string;
     youtube: string;
+    instagram?: string;
   };
   hospitals: HospitalAffiliation[];
   education: DegreeInfo[];
@@ -148,6 +149,7 @@ export const doctorData: DoctorProfile = {
     linkedin: "https://www.linkedin.com/in/dr-vijay-ganesh-sankar-633b92288?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     twitter: "https://twitter.com/drvijayganesh",
     youtube: "https://youtube.com/drvijayganesh",
+    instagram: "https://www.instagram.com/pedsurgeonvijay?igsh=MXJ2cWw3eWU5MjQ4dA==",
   },
   hospitals: [
     {
