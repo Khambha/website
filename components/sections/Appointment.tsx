@@ -13,9 +13,37 @@ import { doctorData } from "@/constants/doctorData";
 // Zod form validation schema
 const appointmentSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
-  phone: z.string().min(7, "Phone number must be valid"),
+  phone: z
+    .string()
+    .min(1, "Phone number is required")
+    .refine(
+      (val) => {
+        const cleaned = val.replace(/[^\d+]/g, "");
+        const indianMobileRegex = /^(?:\+91|0)?[6-9]\d{9}$/;
+        const internationalMobileRegex = /^\+\d{10,14}$/;
+        return indianMobileRegex.test(cleaned) || internationalMobileRegex.test(cleaned);
+      },
+      {
+        message: "Please enter a valid 10-digit mobile number (e.g. 9876543210 or +91 9876543210)",
+      }
+    ),
   email: z.string().email("Invalid email address"),
-  preferredDate: z.string().min(1, "Please pick a preferred date"),
+  preferredDate: z
+    .string()
+    .min(1, "Please pick a preferred date")
+    .refine(
+      (val) => {
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, "0");
+        const dd = String(today.getDate()).padStart(2, "0");
+        const todayStr = `${yyyy}-${mm}-${dd}`;
+        return val >= todayStr;
+      },
+      {
+        message: "Preferred date cannot be in the past",
+      }
+    ),
   message: z.string().optional(),
   isEmergency: z.boolean(),
 });
@@ -26,6 +54,12 @@ export const Appointment: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successData, setSuccessData] = useState<string | null>(null);
   const [submitError, setSubmitError] = useState<string | null>(null);
+
+  const todayObj = new Date();
+  const yyyy = todayObj.getFullYear();
+  const mm = String(todayObj.getMonth() + 1).padStart(2, "0");
+  const dd = String(todayObj.getDate()).padStart(2, "0");
+  const todayMinStr = `${yyyy}-${mm}-${dd}`;
 
   const {
     register,
@@ -185,35 +219,81 @@ export const Appointment: React.FC = () => {
                   </a>
                 </div>
               </div>
+
+              {/* More Ways to Connect */}
+              <div className="border-t border-slate-100 pt-5 mt-5 text-left">
+                <h4 className="font-display font-bold text-xs uppercase tracking-widest text-slate-400 mb-3">
+                  More Ways to Connect
+                </h4>
+                <div className="grid grid-cols-3 gap-3">
+                  <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=drvijayganeshsankar@gmail.com&su=Pediatric%20Surgery%20Consultation%20Request%20-%20Dr.%20Vijay%20Ganesh"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center justify-center p-3 rounded-xl bg-slate-50 border border-slate-100 hover:border-brand-blue hover:text-brand-blue hover:bg-brand-blue/5 transition-all group/icon cursor-pointer"
+                  >
+                    <svg className="h-5 w-5 text-slate-500 group-hover/icon:text-brand-blue mb-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5H4.5a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+                    </svg>
+                    <span className="text-[10px] font-semibold text-slate-600">Email</span>
+                  </a>
+                  
+                  <a
+                    href="https://www.instagram.com/pedsurgeonvijay?igsh=MXJ2cWw3eWU5MjQ4dA=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center justify-center p-3 rounded-xl bg-slate-50 border border-slate-100 hover:border-[#E1306C] hover:text-[#E1306C] hover:bg-[#E1306C]/5 transition-all group/icon cursor-pointer"
+                  >
+                    <svg className="h-5 w-5 text-slate-500 group-hover/icon:text-[#E1306C] mb-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                      <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    <span className="text-[10px] font-semibold text-slate-600">Instagram</span>
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com/in/dr-vijay-ganesh-sankar-633b92288?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center justify-center p-3 rounded-xl bg-slate-50 border border-slate-100 hover:border-[#0077B5] hover:text-[#0077B5] hover:bg-[#0077B5]/5 transition-all group/icon cursor-pointer"
+                  >
+                    <svg className="h-5 w-5 text-slate-500 group-hover/icon:text-[#0077B5] mb-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    <span className="text-[10px] font-semibold text-slate-600">LinkedIn</span>
+                  </a>
+                </div>
+              </div>
             </Card>
           </div>
 
           {/* Right Column: Form Container Card */}
           <div className="lg:col-span-7 flex">
             <Card className="w-full p-8 md:p-10 border border-slate-200/60 shadow-premium rounded-2xl bg-white flex flex-col justify-between">
-              <div>
-                {/* Form Header */}
-                <div className="mb-6 text-left space-y-2">
-                  <span className="text-[10px] font-bold tracking-[0.2em] text-brand-blue uppercase block">
-                    Secure Form
-                  </span>
-                  <h3 className="font-display font-bold text-xl text-brand-navy">Request a Consultation</h3>
-                  <p className="text-xs text-slate-500 font-sans leading-relaxed">
-                    Complete the secure details below. We will get back to you within 2-4 business hours.
-                  </p>
-                </div>
+              {/* Form Header */}
+              <div className="mb-6 text-left space-y-2">
+                <span className="text-[10px] font-bold tracking-[0.2em] text-brand-blue uppercase block">
+                  Secure Form
+                </span>
+                <h3 className="font-display font-bold text-xl text-brand-navy">Request a Consultation</h3>
+                <p className="text-xs text-slate-500 font-sans leading-relaxed">
+                  Complete the secure details below. We will get back to you within 2-4 business hours.
+                </p>
+              </div>
 
-                <AnimatePresence mode="wait">
-                  {!successData ? (
-                    <motion.form
-                      key="appointment-form"
-                      onSubmit={handleSubmit(onSubmit)}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      className="space-y-5 text-left"
-                      noValidate
-                    >
+              <AnimatePresence mode="wait">
+                {!successData ? (
+                  <motion.form
+                    key="appointment-form"
+                    onSubmit={handleSubmit(onSubmit)}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="flex-1 flex flex-col justify-between space-y-6 text-left"
+                    noValidate
+                  >
+                    <div className="space-y-5">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                         {/* Name */}
                         <div className="space-y-1.5">
@@ -282,6 +362,7 @@ export const Appointment: React.FC = () => {
                           <input
                             id="preferredDate"
                             type="date"
+                            min={todayMinStr}
                             {...register("preferredDate")}
                             className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/10 focus:bg-white rounded-lg text-sm outline-none transition-all text-slate-700"
                           />
@@ -331,18 +412,19 @@ export const Appointment: React.FC = () => {
                           {submitError}
                         </p>
                       )}
+                    </div>
 
-                      <Button
-                        type="submit"
-                        variant="primary"
-                        size="lg"
-                        isLoading={isSubmitting}
-                        className="w-full rounded-lg py-3.5 mt-2"
-                      >
-                        <Calendar className="h-4.5 w-4.5 mr-2" />
-                        <span>Request Consultation</span>
-                      </Button>
-                    </motion.form>
+                    <Button
+                      type="submit"
+                      variant="primary"
+                      size="lg"
+                      isLoading={isSubmitting}
+                      className="w-full rounded-lg py-3.5 mt-4"
+                    >
+                      <Calendar className="h-4.5 w-4.5 mr-2" />
+                      <span>Request Consultation</span>
+                    </Button>
+                  </motion.form>
                   ) : (
                     <motion.div
                       key="appointment-success"
@@ -382,7 +464,6 @@ export const Appointment: React.FC = () => {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
             </Card>
           </div>
 

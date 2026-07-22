@@ -145,7 +145,7 @@ export const doctorData: DoctorProfile = {
   whatsappNumber: "+917386540480",
   workingHours: "Mon - Sat: 9:00 AM - 5:00 PM (Emergency 24/7)",
   socialLinks: {
-    linkedin: "https://www.linkedin.com/pub/vijayganesh/79/3",
+    linkedin: "https://www.linkedin.com/in/dr-vijay-ganesh-sankar-633b92288?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     twitter: "https://twitter.com/drvijayganesh",
     youtube: "https://youtube.com/drvijayganesh",
   },
