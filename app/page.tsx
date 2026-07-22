@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { Trust } from "@/components/sections/Trust";
@@ -11,8 +13,48 @@ import { Blog } from "@/components/sections/Blog";
 import { Appointment } from "@/components/sections/Appointment";
 import { Footer } from "@/components/sections/Footer";
 import { CollapsibleSection } from "@/components/CollapsibleSection";
+import { FallbackModal } from "@/components/FallbackModal";
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    // 1. Listen for custom event to open the modal from other components
+    const handleOpenModal = () => setIsModalOpen(true);
+    window.addEventListener("open-fallback-modal", handleOpenModal);
+
+    // 2. Exit Intent Trigger Logic (Desktop only)
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    if (isMobile) {
+      return () => {
+        window.removeEventListener("open-fallback-modal", handleOpenModal);
+      };
+    }
+
+    const hasSeenExitIntent = sessionStorage.getItem("seen-exit-intent");
+    if (hasSeenExitIntent) {
+      return () => {
+        window.removeEventListener("open-fallback-modal", handleOpenModal);
+      };
+    }
+
+    const handleMouseLeave = (e: MouseEvent) => {
+      // clientY <= 0 triggers exactly when the cursor leaves the window top (e.g. to address bar)
+      if (e.clientY <= 0) {
+        setIsModalOpen(true);
+        sessionStorage.setItem("seen-exit-intent", "true");
+        document.removeEventListener("mouseleave", handleMouseLeave);
+      }
+    };
+
+    document.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      window.removeEventListener("open-fallback-modal", handleOpenModal);
+      document.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Sticky Top Header */}
@@ -74,6 +116,9 @@ export default function Home() {
 
       {/* Footer Area */}
       <Footer />
+
+      {/* Reusable Hybrid Redirection / Exit Intent Pop-up Modal */}
+      <FallbackModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }

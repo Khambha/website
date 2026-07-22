@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import { Calendar, Phone, ArrowDown, Award, ShieldCheck } from "lucide-react";
+import { Phone, ArrowDown, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/Button";
 import { doctorData } from "@/constants/doctorData";
+import { Button } from "@/components/ui/Button";
 
 export const Hero: React.FC = () => {
   const containerVariants = {
@@ -80,11 +80,11 @@ export const Hero: React.FC = () => {
               className="flex items-center gap-2 group shadow-md hover:shadow-brand-green/20 bg-brand-blue hover:bg-brand-green hover:border-brand-green text-white font-semibold transition-all duration-300"
             >
               <Calendar className="h-5 w-5 transition-transform group-hover:scale-110" />
-              <span>Book Consultation</span>
+              <span>Book Appointment</span>
             </Button>
 
             <a
-              href={`tel:${doctorData.contactPhone.replace(/\s+/g, "")}`}
+              href={`tel:${doctorData.contactPhone.replace(/[^+\d]/g, "")}`}
               className="inline-flex items-center justify-center gap-2 border border-slate-300 hover:border-brand-blue hover:text-brand-blue text-slate-700 bg-white font-semibold transition-all duration-300 px-8 py-3 rounded-lg text-sm shadow-sm"
             >
               <Phone className="h-5 w-5 text-brand-green" />

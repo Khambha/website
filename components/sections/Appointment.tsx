@@ -73,6 +73,7 @@ export const Appointment: React.FC = () => {
         // Redirect to WhatsApp in a new tab
         if (typeof window !== "undefined") {
           window.open(whatsappUrl, "_blank");
+          window.dispatchEvent(new Event("open-fallback-modal"));
         }
 
         setSuccessData(resData.message);
