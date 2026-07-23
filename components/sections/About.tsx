@@ -14,42 +14,41 @@ export const About: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <SectionTitle
-          title="About Dr Vijay Ganesh"
+          title={"About \u00A0Dr Vijay Ganesh"}
           subtitle="Combining global certification with child-first clinical compassion."
           badge="Meet the Surgeon"
+          className="mb-4 md:mb-6"
         />
 
         {/* Top Row: Biography & Care Philosophy */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch mt-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch mt-0 mb-12">
           {/* Biography Text */}
           <div className="lg:col-span-7 flex flex-col justify-center text-left">
-            <h3 className="font-display font-bold text-2xl md:text-3xl text-brand-navy leading-snug mb-4">
-              Surgical Precision, Child-First Care
-            </h3>
-            <p className="text-slate-650 leading-relaxed text-base md:text-lg">
+            <p className="font-sans text-slate-700 text-lg md:text-xl leading-relaxed">
               {doctorData.aboutText}
             </p>
           </div>
 
           {/* Philosophy Card */}
           <div className="lg:col-span-5 flex">
-            <Card className="w-full bg-white border border-slate-200/80 shadow-premium p-8 rounded-2xl relative overflow-hidden text-left flex flex-col justify-between">
-              <div className="flex justify-between items-start mb-6">
+            <Card className="w-full bg-white border border-slate-200/80 shadow-premium p-6 md:p-7 rounded-2xl relative overflow-hidden text-left flex flex-col justify-between">
+              <div className="flex justify-between items-start mb-4">
                 <div className="text-slate-400">
-                  <Quote className="h-8 w-8 rotate-180 fill-current" />
+                  <Quote className="h-6 w-6 rotate-180 fill-current" />
                 </div>
-                <span className="text-[10px] font-bold text-brand-green uppercase tracking-widest bg-brand-green-light/35 px-2.5 py-1 rounded-full">
+                <span className="text-[10px] font-bold text-brand-green uppercase tracking-widest">
                   Care Philosophy
                 </span>
               </div>
 
-              <blockquote className="font-sans italic text-slate-700 text-base leading-relaxed mb-6">
+              <blockquote className="font-sans italic text-slate-700 text-lg md:text-xl leading-relaxed mb-4">
                 &ldquo;{doctorData.philosophy}&rdquo;
               </blockquote>
 
-              <div className="border-t border-slate-100 pt-4 flex justify-between items-center text-[10px] tracking-wider text-slate-400 uppercase font-semibold">
-                <span>Pediatric Surgery</span>
-                <span className="text-brand-navy">Dr. {doctorData.name}</span>
+              <div className="border-t border-slate-100 pt-3 flex justify-end items-center">
+                <span className="text-xs md:text-sm font-bold text-brand-blue">
+                  - Dr {doctorData.name}
+                </span>
               </div>
             </Card>
           </div>

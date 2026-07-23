@@ -104,10 +104,10 @@ export const Hero: React.FC = () => {
               href="https://www.google.com/maps/search/?api=1&query=Aster+Women+and+Children+Hospital+Whitefield+Bangalore"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2.5 bg-brand-blue-light/10 border border-brand-blue/10 hover:border-brand-green/30 hover:bg-brand-green-light/5 hover:text-brand-green px-4 py-2 rounded-xl text-brand-navy transition-all duration-300 cursor-pointer group/badge"
+              className="flex items-center gap-2.5 text-brand-navy hover:text-brand-green transition-all duration-300 cursor-pointer group/badge py-1"
             >
-              <span className="w-2 h-2 rounded-full bg-brand-blue shrink-0 animate-pulse group-hover/badge:bg-brand-green" />
-              <span className="font-semibold text-sm">
+              <span className="w-2 h-2 rounded-full bg-brand-blue shrink-0 group-hover/badge:bg-brand-green transition-colors duration-300" />
+              <span className="font-bold text-sm">
                 Aster Women and Children Hospital, Whitefield, Bangalore
               </span>
             </a>
