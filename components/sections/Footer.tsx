@@ -75,7 +75,7 @@ export const Footer: React.FC = () => {
               href={doctorData.socialLinks.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="h-10 w-10 rounded-lg bg-white/5 hover:bg-brand-blue hover:text-white transition-all flex items-center justify-center text-slate-400"
+              className="h-10 w-10 rounded-lg bg-white/5 hover:bg-[#0077B5] hover:text-white transition-all flex items-center justify-center text-slate-400"
               aria-label="LinkedIn"
             >
               <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
@@ -83,26 +83,21 @@ export const Footer: React.FC = () => {
               </svg>
             </a>
             <a
-              href={doctorData.socialLinks.twitter}
+              href={`https://mail.google.com/mail/?view=cm&fs=1&to=${doctorData.contactEmail}&su=Pediatric%20Surgery%20Consultation%20Request%20-%20Dr.%20Vijay%20Ganesh`}
+              onClick={handleEmailClick}
               target="_blank"
               rel="noopener noreferrer"
-              className="h-10 w-10 rounded-lg bg-white/5 hover:bg-brand-blue hover:text-white transition-all flex items-center justify-center text-slate-400"
-              aria-label="Twitter"
+              className="h-10 w-10 rounded-lg bg-white/5 hover:bg-[#EA4335] hover:text-white transition-all flex items-center justify-center text-slate-400"
+              aria-label="Email"
             >
-              <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
+              <Mail className="h-5 w-5" />
             </a>
             <a
-              href={doctorData.socialLinks.youtube}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="h-10 w-10 rounded-lg bg-white/5 hover:bg-brand-blue hover:text-white transition-all flex items-center justify-center text-slate-400"
-              aria-label="YouTube"
+              href={`tel:${doctorData.contactPhone.replace(/\s+/g, "")}`}
+              className="h-10 w-10 rounded-lg bg-white/5 hover:bg-[#0D9488] hover:text-white transition-all flex items-center justify-center text-slate-400"
+              aria-label="Call Phone"
             >
-              <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
-                <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.108C19.52 3.5 12 3.5 12 3.5s-7.52 0-9.388.555a3.003 3.003 0 0 0-2.11 2.108C0 8.03 0 12 0 12s0 3.97.502 5.837a3.003 3.003 0 0 0 2.11 2.108C4.48 20.5 12 20.5 12 20.5s7.52 0 9.388-.555a3.003 3.003 0 0 0 2.11-2.108C24 15.97 24 12 24 12s0-3.97-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-              </svg>
+              <Phone className="h-5 w-5" />
             </a>
             {doctorData.socialLinks.instagram && (
               <a
