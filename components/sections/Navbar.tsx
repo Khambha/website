@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { doctorData } from "@/constants/doctorData";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,26 +62,29 @@ export const Navbar: React.FC = () => {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-sans border-b",
           isScrolled
-            ? "glassmorphism border-slate-200/50 shadow-soft py-3"
-            : "bg-transparent border-transparent py-5"
+            ? "glassmorphism border-slate-200/50 shadow-soft py-2"
+            : "bg-transparent border-transparent py-3"
         )}
       >
         <div className="max-w-7xl mx-auto px-5 md:px-7 flex items-center justify-between">
           {/* Logo & Brand */}
           <a
             href="#"
-            className="flex flex-col text-left group focus:outline-none"
+            className="flex items-center text-left focus:outline-none"
             onClick={(e) => handleLinkClick(e, "#")}
           >
-            <span 
-              className="font-serif font-bold text-xl md:text-2xl text-brand-navy tracking-tight group-hover:text-brand-blue transition-colors"
-              style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
-            >
-              Dr {doctorData.name}
-            </span>
-            <span className="text-[10px] md:text-[11px] lg:text-xs text-brand-green font-bold tracking-wide leading-tight mt-1 max-w-[280px] sm:max-w-[360px] md:max-w-[450px] lg:max-w-[500px]">
-              {doctorData.title}
-            </span>
+            <Image
+              src="/logo_v3.png"
+              alt={`Dr ${doctorData.name} - ${doctorData.title}`}
+              width={500}
+              height={101}
+              priority
+              unoptimized
+              className={cn(
+                "w-auto object-contain transition-all duration-300",
+                isScrolled ? "h-8 md:h-10 lg:h-12" : "h-10 md:h-12 lg:h-14"
+              )}
+            />
           </a>
 
           {/* Desktop Navigation */}

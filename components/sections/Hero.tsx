@@ -39,7 +39,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-screen pt-40 lg:pt-44 pb-20 flex items-center justify-center bg-white overflow-hidden font-sans">
+    <section className="relative min-h-screen pt-24 lg:pt-28 pb-20 flex items-center justify-center bg-white overflow-hidden font-sans">
       <div className="absolute inset-0 bg-[#F8FAFC]/50 pointer-events-none" />
 
 
@@ -118,14 +118,14 @@ export const Hero: React.FC = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
-            className="w-full max-w-[400px] aspect-[4/5] rounded-2xl bg-slate-100 border border-slate-200/80 shadow-premium relative overflow-hidden group zoom-container"
+            className="w-full max-w-[400px] aspect-[4/5] rounded-2xl bg-slate-100 shadow-premium relative overflow-hidden group"
           >
             {/* Real Doctor Headshot Image */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/dr_image.jpeg"
               alt={`Dr ${doctorData.name}`}
-              className="w-full h-full object-cover object-center zoom-image"
+              className="w-full h-full object-cover object-center scale-110 transition-transform duration-500 ease-out group-hover:scale-115"
             />
 
             {/* Elegant overlay gradient on bottom of image for readability */}
