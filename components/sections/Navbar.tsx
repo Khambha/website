@@ -35,6 +35,13 @@ export const Navbar: React.FC = () => {
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setIsOpen(false);
+    if (href === "#") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+      return;
+    }
     const targetElement = document.querySelector(href);
     if (targetElement) {
       const offset = 80; // height of sticky navbar
@@ -58,17 +65,20 @@ export const Navbar: React.FC = () => {
             : "bg-transparent border-transparent py-5"
         )}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-5 md:px-7 flex items-center justify-between">
           {/* Logo & Brand */}
           <a
             href="#"
             className="flex flex-col text-left group focus:outline-none"
             onClick={(e) => handleLinkClick(e, "#")}
           >
-            <span className="font-display font-bold text-lg md:text-xl text-brand-navy tracking-tight group-hover:text-brand-blue transition-colors">
-              Dr. {doctorData.name}
+            <span 
+              className="font-serif font-bold text-xl md:text-2xl text-brand-navy tracking-tight group-hover:text-brand-blue transition-colors"
+              style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
+            >
+              Dr {doctorData.name}
             </span>
-            <span className="text-xs text-brand-green font-medium tracking-wide">
+            <span className="text-[10px] md:text-[11px] lg:text-xs text-brand-green font-bold tracking-wide leading-tight mt-1 max-w-[280px] sm:max-w-[360px] md:max-w-[450px] lg:max-w-[500px]">
               {doctorData.title}
             </span>
           </a>
@@ -92,7 +102,7 @@ export const Navbar: React.FC = () => {
           <div className="hidden lg:flex items-center gap-4">
             <a
               href={`tel:${doctorData.contactPhone.replace(/[^+\d]/g, "")}`}
-              className="flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-brand-blue transition-colors py-2 px-3 rounded-lg focus:outline-none"
+              className="flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-brand-blue transition-colors py-2 px-3 rounded-lg focus:outline-none whitespace-nowrap shrink-0"
             >
               <Phone className="h-4 w-4 text-brand-green" />
               <span>Call Now</span>
@@ -110,7 +120,7 @@ export const Navbar: React.FC = () => {
                   });
                 }
               }}
-              className="flex items-center gap-2"
+              className="flex items-center gap-2 whitespace-nowrap shrink-0"
             >
               <Calendar className="h-4 w-4" />
               <span>Book Appointment</span>

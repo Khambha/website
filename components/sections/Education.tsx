@@ -56,7 +56,7 @@ export const Education: React.FC = () => {
 
   return (
     <section className="py-12 bg-medical-bg font-sans scroll-mt-20 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-5 md:px-7 relative z-10">
         <SectionTitle
           title="Academic Foundations & Experience"
           subtitle="A roadmap showcasing decades of rigorous academic training, international fellowships, and clinical excellence."
@@ -72,7 +72,7 @@ export const Education: React.FC = () => {
               <path d="M 30 0 C 10 150, 50 250, 30 400 C 10 550, 50 650, 30 800 C 10 900, 50 950, 30 1000" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
               <motion.path
                 d="M 30 0 C 10 150, 50 250, 30 400 C 10 550, 50 650, 30 800 C 10 900, 50 950, 30 1000"
-                stroke="#10b981"
+                stroke="#0D9488"
                 strokeWidth="4"
                 strokeLinecap="round"
                 style={{ pathLength }}
@@ -125,7 +125,7 @@ export const Education: React.FC = () => {
                     <div className="col-span-1 flex justify-center relative">
                       <motion.div
                         initial={{ scale: 0.8, backgroundColor: "#ffffff", borderColor: "#cbd5e1" }}
-                        whileInView={{ scale: 1.15, backgroundColor: "#10b981", borderColor: "#10b981" }}
+                        whileInView={{ scale: 1.15, backgroundColor: "#0D9488", borderColor: "#0D9488" }}
                         viewport={{ once: false, margin: "-15% 0px -15% 0px" }}
                         transition={{ duration: 0.4 }}
                         className="h-5 w-5 rounded-full border-4 shadow-sm z-30 bg-white border-slate-300"
@@ -161,7 +161,7 @@ export const Education: React.FC = () => {
                     {/* Mobile Circle Dot */}
                     <motion.div
                       initial={{ scale: 0.8, backgroundColor: "#ffffff", borderColor: "#cbd5e1" }}
-                      whileInView={{ scale: 1.15, backgroundColor: "#10b981", borderColor: "#10b981" }}
+                      whileInView={{ scale: 1.15, backgroundColor: "#0D9488", borderColor: "#0D9488" }}
                       viewport={{ once: false, margin: "-10% 0px -10% 0px" }}
                       transition={{ duration: 0.4 }}
                       className="absolute left-[-26px] top-1.5 h-4.5 w-4.5 rounded-full border-3 bg-white border-slate-300 z-20"

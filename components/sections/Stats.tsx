@@ -4,15 +4,13 @@ import React, { useEffect, useState, useRef } from "react";
 import { useInView } from "framer-motion";
 import { Activity, Award, FileText, Heart, Building } from "lucide-react";
 
-
 interface StatItemProps {
   valueString: string; // e.g. "15+", "8000+", "15000+"
   label: string;
   icon: React.ComponentType<{ className?: string }>;
-  color: string;
 }
 
-const StatCounter: React.FC<StatItemProps> = ({ valueString, label, icon: Icon, color }) => {
+const StatCounter: React.FC<StatItemProps> = ({ valueString, label, icon: Icon }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
   const [count, setCount] = useState(0);
@@ -48,15 +46,20 @@ const StatCounter: React.FC<StatItemProps> = ({ valueString, label, icon: Icon, 
   return (
     <div
       ref={ref}
-      className="p-6 bg-white/5 border border-white/10 rounded-2xl shadow-soft hover:shadow-premium flex flex-col items-center justify-center text-center group transition-all duration-300 hover:bg-white/10 hover:border-brand-gold/30"
+      className="p-6 bg-slate-900/40 border border-white/10 rounded-2xl shadow-soft hover:shadow-premium flex flex-col items-center justify-center text-center group transition-all duration-300 hover:bg-slate-900/60 hover:border-cyan-500/30 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)]"
     >
-      <div className={`p-3 rounded-lg mb-4 ${color} transition-transform duration-300 group-hover:scale-110 shadow-sm`}>
-        <Icon className="h-5 w-5" />
+      {/* Glow cyan icon box */}
+      <div className="p-3 rounded-xl bg-cyan-950/40 border border-cyan-500/30 text-cyan-400 mb-4 transition-transform duration-300 group-hover:scale-110 shadow-sm flex items-center justify-center">
+        <Icon className="h-5.5 w-5.5" />
       </div>
-      <span className="font-display font-bold text-3xl md:text-4xl text-white tracking-tight mb-1 bg-gradient-to-r from-brand-gold via-white to-white bg-clip-text text-transparent">
+      
+      {/* Pure white count */}
+      <span className="font-display font-bold text-3xl md:text-4xl text-white tracking-tight mb-2">
         {isInView ? formattedCount : "0" + suffix}
       </span>
-      <span className="text-[10px] md:text-xs font-semibold text-slate-400 uppercase tracking-widest leading-relaxed">
+      
+      {/* Light grey uppercase label */}
+      <span className="text-[10px] md:text-xs font-semibold text-slate-300 uppercase tracking-wider leading-relaxed">
         {label}
       </span>
     </div>
@@ -69,43 +72,50 @@ export const Stats: React.FC = () => {
       valueString: "15+",
       label: "Years Experience",
       icon: Award,
-      color: "bg-brand-gold/20 text-brand-gold",
     },
     {
       valueString: "6,000+",
       label: "Surgeries Performed",
       icon: Activity,
-      color: "bg-brand-green/20 text-brand-green-light",
     },
     {
       valueString: "10,000+",
       label: "Patients Treated",
       icon: Heart,
-      color: "bg-rose-500/20 text-rose-300",
     },
     {
       valueString: "25+",
       label: "Medical Publications",
       icon: FileText,
-      color: "bg-indigo-500/20 text-indigo-300",
     },
     {
       valueString: "2+",
       label: "State Councils",
       icon: Award,
-      color: "bg-amber-500/20 text-amber-300",
     },
     {
       valueString: "6+",
-      label: "Major Centers served",
+      label: "Major Centers Served",
       icon: Building,
-      color: "bg-cyan-500/20 text-cyan-300",
     }
   ];
 
+  const handleScrollToAppointment = () => {
+    const target = document.querySelector("#appointment-section");
+    if (target) {
+      const offset = 80;
+      window.scrollTo({
+        top: target.getBoundingClientRect().top + window.pageYOffset - offset,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <section id="stats-section" className="py-16 bg-brand-navy font-sans relative overflow-hidden scroll-mt-20">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+    <section id="stats-section" className="py-16 bg-[#0A1128] font-sans scroll-mt-20 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-5 md:px-7 relative z-10">
+        
+        {/* Stats Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-6 gap-6 md:gap-8">
           {stats.map((stat, idx) => (
             <StatCounter
@@ -113,10 +123,20 @@ export const Stats: React.FC = () => {
               valueString={stat.valueString}
               label={stat.label}
               icon={stat.icon}
-              color={stat.color}
             />
           ))}
         </div>
+
+        {/* Neon Glow Cyan CTA Button */}
+        <div className="flex justify-center mt-12">
+          <button
+            onClick={handleScrollToAppointment}
+            className="px-10 py-4 bg-cyan-950/60 border border-cyan-400 text-white font-display font-bold text-sm rounded-full tracking-wider uppercase transition-all duration-300 hover:bg-cyan-500 hover:text-white shadow-[0_0_15px_rgba(6,182,212,0.4)] hover:shadow-[0_0_25px_rgba(6,182,212,0.7)] cursor-pointer focus:outline-none"
+          >
+            Book An Appointment
+          </button>
+        </div>
+
       </div>
     </section>
   );

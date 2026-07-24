@@ -12,7 +12,7 @@ export const About: React.FC = () => {
       {/* Subtle decorative background glow */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-brand-blue-light/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-5 md:px-7 relative z-10">
         <SectionTitle
           title={"About \u00A0Dr Vijay Ganesh"}
           subtitle="Combining global certification with child-first clinical compassion."

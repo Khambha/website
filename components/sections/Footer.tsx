@@ -23,8 +23,8 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-brand-navy text-white pt-20 pb-8 font-sans">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
+    <footer className="bg-[#030D1B] text-white pt-20 pb-8 font-sans">
+      <div className="max-w-7xl mx-auto px-5 md:px-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
         
         {/* Branding & Socials */}
         <div className="lg:col-span-5 space-y-6 text-left">
@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
             className="flex flex-col text-left focus:outline-none"
           >
             <span className="font-display font-bold text-xl tracking-tight text-white">
-              Dr. {doctorData.name}
+              Dr {doctorData.name}
             </span>
             <span className="text-xs text-brand-green font-medium tracking-wide">
               {doctorData.title}
@@ -157,9 +157,9 @@ export const Footer: React.FC = () => {
       </div>
 
       {/* Footer Bottom copyright area */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <div className="max-w-7xl mx-auto px-5 md:px-7 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
         <p className="font-sans">
-          &copy; {currentYear} Dr. {doctorData.name} Medical Practice. All rights reserved.
+          &copy; {currentYear} Dr {doctorData.name} Medical Practice. All rights reserved.
         </p>
 
         <div className="flex items-center gap-6">

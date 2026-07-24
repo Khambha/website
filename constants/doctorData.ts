@@ -129,7 +129,7 @@ export interface DoctorProfile {
 
 export const doctorData: DoctorProfile = {
   name: "Vijay Ganesh",
-  title: "Senior Consultant Paediatric Surgeon",
+  title: " Consultant Pediatric Surgeon, Pediatric Urologist and Robotic Pediatric Surgeon",
   tagline: "15+ years of specialized pediatric urology, laparoscopy, and neonatal reconstructive surgery.",
   qualificationsSummary: "MBBS, MS, MCh, FICRS, FEBPS, FMAS, FIAGES",
   experienceYears: "15+ Years",

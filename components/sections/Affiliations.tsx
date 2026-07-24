@@ -21,10 +21,10 @@ export const Affiliations: React.FC = () => {
 
   return (
     <section id="hospitals" className="py-20 bg-white font-sans scroll-mt-20">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-7xl mx-auto px-5 md:px-7">
         <SectionTitle
           title="Associated Clinics & Hospitals"
-          subtitle={`Dr. ${doctorData.name} is affiliated with leading state-of-the-art hospitals equipped with Level-IV NICUs, advanced pediatric suites, and emergency backup.`}
+          subtitle={`Dr ${doctorData.name} is affiliated with leading state-of-the-art hospitals equipped with Level-IV NICUs, advanced pediatric suites, and emergency backup.`}
           badge="Practicing Locations"
         />
 

@@ -205,7 +205,7 @@ export const Trust: React.FC = () => {
 
   return (
     <section id="treatments" className="py-12 bg-[#F8FAFC] font-sans scroll-mt-20">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-7xl mx-auto px-5 md:px-7">
         <SectionTitle
           title="Treatments & Clinical Specialties"
           subtitle="Advanced pediatric surgical procedures customized for newborn congenital anomalies, urological defects, and keyhole operations."

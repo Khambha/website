@@ -61,7 +61,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ hideHeader = false }
 
   return (
     <section id="testimonials" className={cn(hideHeader ? "py-0 bg-transparent" : "py-20 bg-medical-bg", "font-sans scroll-mt-20")}>
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-7xl mx-auto px-5 md:px-7">
         {!hideHeader && (
           <SectionTitle
             title="Stories of Healing & Hope"

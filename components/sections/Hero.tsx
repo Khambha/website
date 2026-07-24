@@ -39,14 +39,12 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-screen pt-32 pb-20 flex items-center justify-center bg-white overflow-hidden font-sans">
+    <section className="relative min-h-screen pt-40 lg:pt-44 pb-20 flex items-center justify-center bg-white overflow-hidden font-sans">
       <div className="absolute inset-0 bg-[#F8FAFC]/50 pointer-events-none" />
 
-      {/* Subtle Vertical Architectural Gridlines */}
-      <div className="absolute left-1/4 top-0 h-full w-[1px] bg-slate-200/35 pointer-events-none hidden lg:block" />
-      <div className="absolute right-1/4 top-0 h-full w-[1px] bg-slate-200/35 pointer-events-none hidden lg:block" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+      <div className="max-w-7xl mx-auto px-5 md:px-7 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         {/* Left Content */}
         <motion.div
           variants={containerVariants}
@@ -65,7 +63,7 @@ export const Hero: React.FC = () => {
             variants={itemVariants}
             className="font-sans text-lg text-slate-650 leading-relaxed max-w-xl mb-8"
           >
-            Dr. <span className="font-semibold text-brand-navy">{doctorData.name}</span>, specializing in advanced neonatal reconstruction and urology, offers your child world-class clinical expertise combined with compassionate care.
+            Dr <span className="font-semibold text-brand-navy">{doctorData.name}</span>, Specializing in advanced neonatal reconstruction and urology, offers your child world-class clinical expertise combined with compassionate care.
           </motion.p>
 
           {/* CTAs */}
@@ -126,14 +124,14 @@ export const Hero: React.FC = () => {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/dr_image.jpeg"
-              alt={`Dr. ${doctorData.name}`}
+              alt={`Dr ${doctorData.name}`}
               className="w-full h-full object-cover object-center zoom-image"
             />
 
             {/* Elegant overlay gradient on bottom of image for readability */}
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/40 to-transparent p-6 text-left flex flex-col justify-end">
-              <h3 className="font-display font-bold text-xl text-white">Dr. {doctorData.name}</h3>
-              <p className="text-xs text-brand-gold font-semibold uppercase tracking-wider mt-1.5">
+              <h3 className="font-display font-bold text-xl text-white">Dr {doctorData.name}</h3>
+              <p className="text-xs text-white font-semibold uppercase tracking-wider mt-1.5">
                 <span>{doctorData.title}</span>
               </p>
             </div>

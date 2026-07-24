@@ -17,7 +17,7 @@ export const Experience: React.FC = () => {
 
   return (
     <section id="experience" className="py-20 bg-white font-sans scroll-mt-20 relative overflow-hidden">
-      <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-5 md:px-7 relative z-10">
         <SectionTitle
           title="Professional Career Journey"
           subtitle="A history of clinical leadership, neonatal training, and pediatric surgical innovation in premier global medical institutions."

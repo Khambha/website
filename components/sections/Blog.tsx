@@ -16,11 +16,11 @@ export const Blog: React.FC<BlogProps> = ({ hideHeader = false }) => {
 
   return (
     <section id="blog" className={cn(hideHeader ? "py-0 bg-transparent" : "py-20 bg-medical-bg", "font-sans scroll-mt-20")}>
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-7xl mx-auto px-5 md:px-7">
         {!hideHeader && (
           <SectionTitle
             title="Parent Education & Health Resources"
-            subtitle={`Insightful video guides and articles co-authored by Dr. ${doctorData.name} to help parents understand pediatric health, surgery prep, and recovery.`}
+            subtitle={`Insightful video guides and articles co-authored by Dr ${doctorData.name} to help parents understand pediatric health, surgery prep, and recovery.`}
             badge="Resources & Education"
           />
         )}

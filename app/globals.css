@@ -5,9 +5,9 @@
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
 
-  --color-brand-navy: #0B1220; /* Elite Dark Clinical Navy */
-  --color-brand-blue: #0F1E36; /* Deep Clinical Blue */
-  --color-brand-blue-hover: #1D2D44;
+  --color-brand-navy: #002366; /* Royal Blue */
+  --color-brand-blue: #002366; /* Royal Blue */
+  --color-brand-blue-hover: #001b4d;
   --color-brand-blue-light: #F4F7FC;
   --color-brand-green: #0D9488; /* Clinical Surgical Teal */
   --color-brand-green-hover: #0F766E;
@@ -41,7 +41,7 @@ html {
 
 body {
   background-color: var(--color-medical-bg);
-  color: var(--color-brand-navy);
+  color: var(--color-brand-navy); /* Midnight Blue body text */
   overflow-x: hidden;
 }
 

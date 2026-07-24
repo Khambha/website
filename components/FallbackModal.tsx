@@ -45,14 +45,14 @@ export const FallbackModal: React.FC<FallbackModalProps> = ({ isOpen, onClose })
             <div className="mx-auto h-24 w-24 rounded-full overflow-hidden border-4 border-brand-blue-light/30 shadow-md mb-4">
               <img
                 src="/images/dr_image.jpeg"
-                alt={`Dr. ${doctorData.name}`}
+                alt={`Dr ${doctorData.name}`}
                 className="h-full w-full object-cover object-top"
               />
             </div>
 
             {/* Doctor Info */}
             <h3 className="font-display font-bold text-xl text-brand-navy">
-              Dr. {doctorData.name}
+              Dr {doctorData.name}
             </h3>
             <p className="text-xs text-brand-green font-semibold tracking-wide uppercase mt-1">
               {doctorData.title}

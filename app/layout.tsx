@@ -3,8 +3,8 @@ import "./globals.css";
 import { doctorData } from "@/constants/doctorData";
 
 export const metadata: Metadata = {
-  title: `Dr. ${doctorData.name} | ${doctorData.title}`,
-  description: `Consult Dr. ${doctorData.name}, a board-certified ${doctorData.title}. Specializing in advanced neonatal surgery, laparoscopic keyhole procedures, and pediatric urology.`,
+  title: `Dr ${doctorData.name} | ${doctorData.title}`,
+  description: `Consult Dr ${doctorData.name}, a board-certified ${doctorData.title}. Specializing in advanced neonatal surgery, laparoscopic keyhole procedures, and pediatric urology.`,
   keywords: [
     "Pediatric Surgeon",
     "Neonatal Surgery",
@@ -14,16 +14,16 @@ export const metadata: Metadata = {
     "Child Doctor Specialist",
     doctorData.name,
   ],
-  authors: [{ name: `Dr. ${doctorData.name}` }],
+  authors: [{ name: `Dr ${doctorData.name}` }],
   metadataBase: new URL("https://example.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: `Dr. ${doctorData.name} | ${doctorData.title}`,
-    description: `Consult Dr. ${doctorData.name}, a board-certified ${doctorData.title}. Specializing in advanced neonatal surgery, laparoscopic keyhole procedures, and pediatric urology.`,
+    title: `Dr ${doctorData.name} | ${doctorData.title}`,
+    description: `Consult Dr ${doctorData.name}, a board-certified ${doctorData.title}. Specializing in advanced neonatal surgery, laparoscopic keyhole procedures, and pediatric urology.`,
     url: "/",
-    siteName: `Dr. ${doctorData.name} Practice`,
+    siteName: `Dr ${doctorData.name} Practice`,
     locale: "en_US",
     type: "profile",
     firstName: "Pediatric",
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `Dr. ${doctorData.name} | ${doctorData.title}`,
-    description: `Consult Dr. ${doctorData.name}, a board-certified ${doctorData.title}. Specializing in advanced neonatal surgery, laparoscopic keyhole procedures, and pediatric urology.`,
+    title: `Dr ${doctorData.name} | ${doctorData.title}`,
+    description: `Consult Dr ${doctorData.name}, a board-certified ${doctorData.title}. Specializing in advanced neonatal surgery, laparoscopic keyhole procedures, and pediatric urology.`,
     creator: `@${doctorData.name.replace(/\s+/g, "")}`,
   },
 };
@@ -47,7 +47,7 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Physician",
-    "name": `Dr. ${doctorData.name}`,
+    "name": `Dr ${doctorData.name}`,
     "image": "https://example.com/doctor-placeholder.jpg",
     "description": doctorData.aboutText,
     "medicalSpecialty": "PediatricSurgery",
