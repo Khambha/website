@@ -55,6 +55,33 @@ export const Appointment: React.FC = () => {
   const [successData, setSuccessData] = useState<string | null>(null);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
+  const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+
+    if (isMobile) {
+      e.preventDefault();
+      const email = "drvijayganeshsankar@gmail.com";
+      const subject = encodeURIComponent("Pediatric Surgery Consultation Request - Dr Vijay Ganesh");
+      const gmailUrl = `googlegmail:///co?to=${email}&subject=${subject}`;
+      const mailtoUrl = `mailto:${email}?subject=${subject}`;
+      const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+      if (isIOS) {
+        const start = Date.now();
+        window.location.href = gmailUrl;
+        setTimeout(() => {
+          if (Date.now() - start < 2000) {
+            window.location.href = mailtoUrl;
+          }
+        }, 1500);
+      } else {
+        window.location.href = mailtoUrl;
+      }
+    }
+  };
+
   const todayObj = new Date();
   const yyyy = todayObj.getFullYear();
   const mm = String(todayObj.getMonth() + 1).padStart(2, "0");
@@ -228,6 +255,7 @@ export const Appointment: React.FC = () => {
                 <div className="grid grid-cols-3 gap-3">
                   <a
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=drvijayganeshsankar@gmail.com&su=Pediatric%20Surgery%20Consultation%20Request%20-%20Dr.%20Vijay%20Ganesh"
+                    onClick={handleEmailClick}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex flex-col items-center justify-center p-3 rounded-xl bg-slate-50 border border-slate-100 hover:border-brand-blue hover:text-brand-blue hover:bg-brand-blue/5 transition-all group/icon cursor-pointer"
