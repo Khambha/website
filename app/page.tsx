@@ -105,8 +105,8 @@ export default function Home() {
           <Testimonials hideHeader />
         </CollapsibleSection>
 
-        {/* 12. Education Blog Grid */}
-        <CollapsibleSection
+        {/* 12. Education Blog Grid (Temporarily hidden) */}
+        {/* <CollapsibleSection
           id="blog"
           badge="Resources & Education"
           title="Parent Education & Health Resources"
@@ -114,7 +114,7 @@ export default function Home() {
           bgClass="bg-medical-bg"
         >
           <Blog hideHeader />
-        </CollapsibleSection>
+        </CollapsibleSection> */}
 
         {/* 11. SEO FAQ Accordion */}
         <CollapsibleSection

@@ -139,13 +139,11 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ hideHeader = false }
 
           {/* Right Panel: Video Mockup & Trust Badges */}
           <div className="lg:col-span-5 flex flex-col gap-6">
-            <Card className="p-1 bg-gradient-to-tr from-brand-blue to-cyan-500 rounded-2xl shadow-premium overflow-hidden relative group">
+            {/* <Card className="p-1 bg-gradient-to-tr from-brand-blue to-cyan-500 rounded-2xl shadow-premium overflow-hidden relative group">
               <div className="aspect-video w-full rounded-xl bg-slate-900 flex flex-col items-center justify-center p-8 relative overflow-hidden">
-                {/* Background decorative overlay */}
                 <div className="absolute inset-0 bg-[radial-gradient(#ffffff05_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
                 <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/45 transition-colors duration-300" />
                 
-                {/* Play Button Action */}
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
@@ -163,7 +161,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ hideHeader = false }
                   <h4 className="font-display font-bold text-sm text-white">Video Consultation Case Study</h4>
                 </div>
               </div>
-            </Card>
+            </Card> */}
 
             <div className="flex items-center gap-3 bg-white border border-slate-200/50 p-5 rounded-2xl shadow-soft text-left">
               <div className="p-3 bg-brand-blue-light text-brand-blue rounded-lg">

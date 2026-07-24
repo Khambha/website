@@ -134,11 +134,11 @@ export const Footer: React.FC = () => {
                 Treatments
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="#blog" onClick={(e) => handleLinkClick(e, "#blog")} className="hover:text-white transition-colors">
                 Video Guides & Blog
               </a>
-            </li>
+            </li> */}
             <li>
               <a href="#testimonials" onClick={(e) => handleLinkClick(e, "#testimonials")} className="hover:text-white transition-colors">
                 Testimonials
