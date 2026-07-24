@@ -22,6 +22,33 @@ export const Footer: React.FC = () => {
     }
   };
 
+  const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+
+    if (isMobile) {
+      e.preventDefault();
+      const email = doctorData.contactEmail;
+      const subject = encodeURIComponent("Pediatric Surgery Consultation Request - Dr Vijay Ganesh");
+      const gmailUrl = `googlegmail:///co?to=${email}&subject=${subject}`;
+      const mailtoUrl = `mailto:${email}?subject=${subject}`;
+      const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+      if (isIOS) {
+        const start = Date.now();
+        window.location.href = gmailUrl;
+        setTimeout(() => {
+          if (Date.now() - start < 2000) {
+            window.location.href = mailtoUrl;
+          }
+        }, 1500);
+      } else {
+        window.location.href = mailtoUrl;
+      }
+    }
+  };
+
   return (
     <footer className="bg-[#030D1B] text-white pt-20 pb-8 font-sans">
       <div className="max-w-7xl mx-auto px-5 md:px-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
@@ -134,8 +161,14 @@ export const Footer: React.FC = () => {
               <span>{doctorData.workingHours}</span>
             </li>
             <li className="flex items-center gap-2">
-              <Mail className="h-4.5 w-4.5 text-brand-blue shrink-0" />
-              <a href={`mailto:${doctorData.contactEmail}`} className="hover:text-white transition-colors">
+              <Mail className="h-4.5 w-4.5 text-brand-green shrink-0" />
+              <a
+                href={`https://mail.google.com/mail/?view=cm&fs=1&to=${doctorData.contactEmail}&su=Pediatric%20Surgery%20Consultation%20Request%20-%20Dr.%20Vijay%20Ganesh`}
+                onClick={handleEmailClick}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors"
+              >
                 {doctorData.contactEmail}
               </a>
             </li>
