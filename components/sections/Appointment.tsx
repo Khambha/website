@@ -194,7 +194,7 @@ export const Appointment: React.FC = () => {
                   <iframe
                     title="Aster Hospital Location Map"
                     src={doctorData.hospitals[0].mapEmbedUrl}
-                    className="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-300"
+                    className="w-full h-full border-0 grayscale-0 md:grayscale md:hover:grayscale-0 transition-all duration-300"
                     allowFullScreen
                     loading="lazy"
                   />
@@ -258,38 +258,38 @@ export const Appointment: React.FC = () => {
                     onClick={handleEmailClick}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex flex-col items-center justify-center py-5 px-4 rounded-xl bg-slate-100/70 border border-slate-200/80 hover:border-[#EA4335] hover:text-[#EA4335] hover:bg-[#EA4335]/5 transition-all group/icon cursor-pointer"
+                    className="flex flex-col items-center justify-center py-5 px-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-750 transition-all duration-300 group/icon cursor-pointer"
                   >
-                    <svg className="h-6.5 w-6.5 text-slate-800 group-hover/icon:text-[#EA4335] mb-1.5 transition-colors" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="h-6.5 w-6.5 text-[#EA4335] md:text-white md:group-hover/icon:text-[#EA4335] mb-1.5 transition-colors duration-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5H4.5a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
                     </svg>
-                    <span className="text-xs font-bold text-slate-800 transition-colors">Email</span>
+                    <span className="text-xs font-bold text-slate-200 transition-colors mt-0.5">Email</span>
                   </a>
                   
                   <a
                     href="https://www.instagram.com/pedsurgeonvijay?igsh=MXJ2cWw3eWU5MjQ4dA=="
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex flex-col items-center justify-center py-5 px-4 rounded-xl bg-slate-100/70 border border-slate-200/80 hover:border-[#E1306C] hover:text-[#E1306C] hover:bg-[#E1306C]/5 transition-all group/icon cursor-pointer"
+                    className="flex flex-col items-center justify-center py-5 px-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-750 transition-all duration-300 group/icon cursor-pointer"
                   >
-                    <svg className="h-6.5 w-6.5 text-slate-800 group-hover/icon:text-[#E1306C] mb-1.5 transition-colors" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="h-6.5 w-6.5 text-[#E1306C] md:text-white md:group-hover/icon:text-[#E1306C] mb-1.5 transition-colors duration-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                       <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
                       <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                     </svg>
-                    <span className="text-xs font-bold text-slate-800 transition-colors">Instagram</span>
+                    <span className="text-xs font-bold text-slate-200 transition-colors mt-0.5">Instagram</span>
                   </a>
 
                   <a
                     href="https://www.linkedin.com/in/dr-vijay-ganesh-sankar-633b92288?utm_source=share_via&utm_content=profile&utm_medium=member_android"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex flex-col items-center justify-center py-5 px-4 rounded-xl bg-slate-100/70 border border-slate-200/80 hover:border-[#0077B5] hover:text-[#0077B5] hover:bg-[#0077B5]/5 transition-all group/icon cursor-pointer"
+                    className="flex flex-col items-center justify-center py-5 px-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-750 transition-all duration-300 group/icon cursor-pointer"
                   >
-                    <svg className="h-6.5 w-6.5 text-slate-800 group-hover/icon:text-[#0077B5] mb-1.5 transition-colors" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="h-6.5 w-6.5 text-[#0077B5] md:text-white md:group-hover/icon:text-[#0077B5] mb-1.5 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                     </svg>
-                    <span className="text-xs font-bold text-slate-800 transition-colors">LinkedIn</span>
+                    <span className="text-xs font-bold text-slate-200 transition-colors mt-0.5">LinkedIn</span>
                   </a>
                 </div>
               </div>
