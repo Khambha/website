@@ -144,6 +144,16 @@ export const Footer: React.FC = () => {
                 FAQ Center
               </a>
             </li>
+            <li>
+              <a href="https://www.asterhospitals.in/doctors/aster-women-children-bangalore-aster-rv-bangalore/dr-s-vijay-ganesh" rel="noopener noreferrer" target="_blank" className="hover:text-white transition-colors">
+                View Aster Hospital Profile
+              </a>
+            </li>
+            <li>
+              <a href="https://in.linkedin.com/in/dr-vijay-ganesh-sankar-633b92288" rel="noopener noreferrer" target="_blank" className="hover:text-white transition-colors">
+                Connect on LinkedIn
+              </a>
+            </li>
           </ul>
         </div>
 
