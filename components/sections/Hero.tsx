@@ -52,18 +52,28 @@ export const Hero: React.FC = () => {
           animate="visible"
           className="lg:col-span-7 flex flex-col text-left"
         >
+          <motion.div
+            variants={itemVariants}
+            className="flex items-center gap-2.5 mb-4"
+          >
+            <span className="h-[1px] w-5 bg-brand-green/30 shrink-0" />
+            <span className="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-brand-green uppercase">
+              Delicate Care for What Matters Most
+            </span>
+          </motion.div>
+
           <motion.h1
             variants={itemVariants}
             className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-brand-navy tracking-tight leading-[1.1] mb-6"
           >
-            Delicate Care for What Matters Most
+            Dr. Vijay Ganesh Sankar
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
             className="font-sans text-lg text-slate-650 leading-relaxed max-w-xl mb-8"
           >
-            Dr <span className="font-semibold text-brand-navy">{doctorData.name}</span>, Specializing in advanced neonatal reconstruction and urology, offers your child world-class clinical expertise combined with compassionate care.
+            Specializing in advanced neonatal reconstruction, robotic surgery, and pediatric urology, offering your child world-class clinical expertise combined with compassionate care.
           </motion.p>
 
           {/* CTAs */}
