@@ -1,14 +1,12 @@
-import { MetadataRoute } from "next";
-
+import { MetadataRoute } from 'next'
+ 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://drvijayganesh.com";
-
   return [
     {
-      url: baseUrl,
+      url: 'https://drvijayganesh.com',
       lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1.0,
+      changeFrequency: 'yearly',
+      priority: 1,
     },
-  ];
+  ]
 }

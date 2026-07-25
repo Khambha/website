@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://drvijayganesh.com',
   },
+  verification: {
+    google: 'YOUR_VERIFICATION_STRING_HERE',
+  },
   openGraph: {
     title: 'Dr. Vijay Ganesh | Official Website',
     description: 'Official website of Dr. Vijay Ganesh Sankar. Specialist at Aster Hospitals Bangalore. View profile, medical expertise, and contact details.',
