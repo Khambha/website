@@ -3,7 +3,7 @@ import "./globals.css";
 import { doctorData } from "@/constants/doctorData";
 
 export const metadata: Metadata = {
-  title: `Dr ${doctorData.name} | ${doctorData.title}`,
+  title: `Dr ${doctorData.name}`,
   description: `Consult Dr ${doctorData.name}, a board-certified ${doctorData.title}. Specializing in advanced neonatal surgery, laparoscopic keyhole procedures, and pediatric urology.`,
   keywords: [
     "Pediatric Surgeon",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: `Dr ${doctorData.name} | ${doctorData.title}`,
+    title: `Dr ${doctorData.name}`,
     description: `Consult Dr ${doctorData.name}, a board-certified ${doctorData.title}. Specializing in advanced neonatal surgery, laparoscopic keyhole procedures, and pediatric urology.`,
     url: "/",
     siteName: `Dr ${doctorData.name} Practice`,
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `Dr ${doctorData.name} | ${doctorData.title}`,
+    title: `Dr ${doctorData.name}`,
     description: `Consult Dr ${doctorData.name}, a board-certified ${doctorData.title}. Specializing in advanced neonatal surgery, laparoscopic keyhole procedures, and pediatric urology.`,
     creator: `@${doctorData.name.replace(/\s+/g, "")}`,
   },
