@@ -4,7 +4,7 @@ import { doctorData } from "@/constants/doctorData";
 
 export const metadata: Metadata = {
   title: 'Dr. Vijay Ganesh | Official Website',
-  description: 'Official website of Dr. Vijay Ganesh Sankar. Specialist at Aster Hospitals Bangalore. View profile, medical expertise, and contact details.',
+  description: 'Official website of Dr. Vijay Ganesh. Specialist at Aster Hospitals Bangalore. View profile, medical expertise, and contact details.',
   keywords: [
     "Pediatric Surgeon",
     "Neonatal Surgery",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Dr. Vijay Ganesh | Official Website',
-    description: 'Official website of Dr. Vijay Ganesh Sankar. Specialist at Aster Hospitals Bangalore. View profile, medical expertise, and contact details.',
+    description: 'Official website of Dr. Vijay Ganesh. Specialist at Aster Hospitals Bangalore. View profile, medical expertise, and contact details.',
     url: "/",
     siteName: `Dr ${doctorData.name} Practice`,
     locale: "en_US",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: 'Dr. Vijay Ganesh | Official Website',
-    description: 'Official website of Dr. Vijay Ganesh Sankar. Specialist at Aster Hospitals Bangalore. View profile, medical expertise, and contact details.',
+    description: 'Official website of Dr. Vijay Ganesh. Specialist at Aster Hospitals Bangalore. View profile, medical expertise, and contact details.',
     creator: `@${doctorData.name.replace(/\s+/g, "")}`,
   },
 };
@@ -50,7 +50,7 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Physician",
-    "name": "Dr. Vijay Ganesh Sankar",
+    "name": "Dr. Vijay Ganesh",
     "url": "https://drvijayganesh.com",
     "sameAs": [
       "https://in.linkedin.com/in/dr-vijay-ganesh-sankar-633b92288",

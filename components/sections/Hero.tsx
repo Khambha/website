@@ -66,7 +66,7 @@ export const Hero: React.FC = () => {
             variants={itemVariants}
             className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-brand-navy tracking-tight leading-[1.1] mb-6"
           >
-            Dr. Vijay Ganesh Sankar
+            Dr. Vijay Ganesh
           </motion.h1>
 
           <motion.p
