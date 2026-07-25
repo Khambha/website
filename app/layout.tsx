@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     canonical: 'https://drvijayganesh.com',
   },
   verification: {
-    google: 'YOUR_VERIFICATION_STRING_HERE',
+    google: 'BFEt3QWZ1gUCD8m7czeF-Cq1WqbYb-v0iPdHCxTAgoU',
   },
   openGraph: {
     title: 'Dr. Vijay Ganesh | Official Website',
