@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from '@vercel/analytics/next';
 import "./globals.css";
 import { doctorData } from "@/constants/doctorData";
 
@@ -76,6 +77,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col scroll-smooth">
         {children}
+        <Analytics />
       </body>
     </html>
   );
